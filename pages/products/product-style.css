@@ -187,9 +187,9 @@ nav {
     height: 100px;
     width: 200px;
     transition: all 0.3s ease;
-    position: relative;
-    left: 10px;
-    top: 50px;
+    position: absolute;
+    right: 280px;
+    top: 250px;
 }
 .add-to-cart:hover {
     transform: translateY(-3px);
@@ -203,8 +203,9 @@ nav {
     width: 220px;
     transition: all 0.3s ease;
     font-size: 27px;
-    position: relative;
-    top:70px;
+    position: absolute;
+    top:380px;
+    right: 270px;
 }
 .back-to-menu:hover {
     transform: translateY(-3px);
