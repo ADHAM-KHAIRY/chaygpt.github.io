@@ -1,0 +1,65 @@
+[
+    {
+    "name": "Adham",
+    "contributions": "2500 Lines",
+    "pages": "Home - About",
+    "skills": ["Python", "Bash", "Git", "C", "CSS", "HTML", "javascript" ,"Linux"],
+    "image": "../../images/adham.jpg"
+    },
+    {
+    "name": "Hamza",
+    "contributions": "1200 Lines",
+    "pages": "Productes template",
+    "skills": ["C", "Git", "CSS", "HTML"],
+    "image": "../../images/hamza.jpg"
+    },
+    {
+    "name": "Abdelrahman T.",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/abdo1.jpg"
+    },
+    {
+    "name": "Amir",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/amir.jpg"
+    },
+    {
+    "name": "Hazem",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/hazem.jpg"
+    },
+    {
+    "name": "Youssef",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/joe.jpg"
+    },
+    {
+    "name": "Seif",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/seif.jpg"
+    },
+    {
+    "name": "Abdelrahman S.",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/abdoo.jpg"
+    },
+    {
+    "name": "Adam",
+    "contributions": "0 Lines",
+    "pages": "Not yet",
+    "skills": ["C", "CSS", "HTML"],
+    "image": "../../images/adam.jpg"
+    }
+]
