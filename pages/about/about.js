@@ -16,7 +16,7 @@ async function getDevelopersData() {
             <h3>${developerData.name}</h3>
                 <div class="member-details">
                         <p class="member-label">Contributions:</p>
-                        <p class="member-value lines-count" data-username="${developerData.github}">Loading...</p>
+                        <p class="member-value lines-count" data-username="${developerData.github}">0 lines</p>
                         <p class="member-label">Pages:</p>
                         <p class="member-value">${developerData.pages}</p>
                 </div>
@@ -28,8 +28,6 @@ async function getDevelopersData() {
         grid.appendChild(developer);
     });
 }
-getDevelopersData();
-
 
 async function loadlines() {
     async function loadData() {
@@ -47,16 +45,19 @@ async function loadlines() {
         data.forEach(contributor => {
             const username = contributor.author.login;
             const additions = contributor.weeks.reduce((sum, week) => sum + week.a, 0);
-            console.log(additions)
+            console.log(username)
             
             const linesElements = document.querySelectorAll(`.lines-count[data-username="${username}"]`);
             linesElements.forEach(el => {
-                el.innerHTML = additions;
+                el.innerHTML = `${additions} Lines`;
             });
             
             
         });    
 }
 
-loadlines();
-//while (true){loadlines()};
+async function main() {
+    await getDevelopersData();
+    await loadlines();
+}
+main();

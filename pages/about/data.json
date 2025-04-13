@@ -2,53 +2,61 @@
     {
     "github": "ADHAM-KHAIRY",    
     "name": "Adham",
-    "pages": "Home - About",
+    "pages": "Home - About - Contact",
     "skills": ["Python", "Bash", "Git", "C", "CSS", "HTML", "javascript" ,"Linux"],
     "image": "../../images/adham.jpg"
     },
     {
+    "github": "hamzaShiba7", 
     "name": "Hamza",
     "pages": "Productes template",
     "skills": ["C", "Git", "CSS", "HTML"],
     "image": "../../images/hamza.jpg"
     },
     {
+    "github": "", 
     "name": "Abdelrahman S.",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/abdo1.jpg"
     },
     {
+    "github": "", 
     "name": "Amir",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/amir.jpg"
     },
     {
+    "github": "", 
     "name": "Hazem",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/hazem.jpg"
     },
     {
+    "github": "Youssefs10", 
     "name": "Youssef",
-    "pages": "Not yet",
+    "pages": "50% of Menu",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/joe.jpg"
     },
     {
+    "github": "seifnasserz" , 
     "name": "Seif",
-    "pages": "Not yet",
+    "pages": "50% of Menu",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/seif.jpg"
     },
     {
+    "github": "", 
     "name": "Abdelrahman T.",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/abdoo.jpg"
     },
     {
+    "github": "", 
     "name": "Adam",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML"],
