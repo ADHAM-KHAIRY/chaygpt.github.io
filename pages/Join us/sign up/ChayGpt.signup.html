@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="sign up ChatGPT">
+    <title>sign up- ChayGpt </title>
+    <link rel="stylesheet" href="sign.up.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">ChayGPT</div>
+        <h1> Sign Up </h1>
+        
+        
+        <form method="get">
+            <div class="form-group user">
+                <label for="user"> Username <span class="required">*</span></label>
+                <div class="input-container">
+                    <input type="text" id="user" name="username" required placeholder="username">
+                </div>
+            </div>
+            
+            <div class="form-group pas">
+                <label for="pas"> password<span class="required">*</span></label>
+                <div class="input-container">
+                    <input type="password" id="pas" name="password" minlength="8" maxlength="15" placeholder="Enter Strong password" required>
+                </div>
+            </div>
+            
+            <div class="form-group email">
+                <label for="email"> Email <span class="required">*</span></label>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+            </div>
+            
+            <div class="name-group">
+                <div class="form-group firstname">
+                    <label for="First">First Name</label>
+                    <div class="input-containe">
+                        <input type="text" id="First" name="firstName" placeholder="Fisrt Name">
+                    </div>
+                </div>
+                
+                <div class="form-group lastname">
+                    <label for="last">Last Name</label>
+                    <div class="input-container">
+                        <input type="text" id="last" name="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gender-group">
+                <label>Gender</label>
+                <div class="radio-container">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">male</label>
+                    </div>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">female</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <input type="submit" value="Sign Up" class="signup-btn">
+            </div>
+        </form>
+        
+        <div class="login-text">
+             Already Have account? <a href="/login/ChayGpt log in.html" class="login-link"> login</a>
+        </div>
+    </div>
+</body>
+</html>
