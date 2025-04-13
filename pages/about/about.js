@@ -32,7 +32,11 @@ getDevelopersData();
 async function loadlines() {
     async function loadData() {
         const url = "https://api.github.com/repos/ADHAM-KHAIRY/chaygpt.github.io/stats/contributors";
-        const res = await fetch(url);  
+        const res = await fetch(url , {
+            headers:{
+                'Authorization': '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'
+            }
+        });  
         if (res.status === 202) {
             console.log("GitHub is generating the stats... retrying in 3s");
             await new Promise(r => setTimeout(r, 3000));
