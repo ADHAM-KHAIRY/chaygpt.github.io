@@ -28,7 +28,7 @@ async function getDevelopersData() {
         grid.appendChild(developer);
     });
 }
-
+getDevelopersData();
 async function loadlines() {
     async function loadData() {
         const url = "https://api.github.com/repos/ADHAM-KHAIRY/chaygpt.github.io/stats/contributors";
@@ -56,8 +56,6 @@ async function loadlines() {
         });    
 }
 
-async function main() {
-    await getDevelopersData();
-    await loadlines();
+for (let i =0 ; i<10;i++){
+    loadlines();
 }
-main();
