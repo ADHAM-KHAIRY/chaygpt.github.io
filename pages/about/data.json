@@ -59,7 +59,7 @@
     "github": "", 
     "name": "Adam",
     "pages": "Not yet",
-    "skills": ["C", "CSS", "HTML"],
+    "skills": ["C", "CSS", "HTML","Git"],
     "image": "../../images/adam.jpg"
     }
 ]
