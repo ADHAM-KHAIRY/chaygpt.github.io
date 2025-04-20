@@ -28,26 +28,44 @@
 </header>
 
 <main class="product-area">
-    <img src="../../images/productes/coffee.jpg">
-    <div class="product-area-text">
-        <h2>Coffee</h2>
-        <h4>Benefits of Coffee:</h4>
-        <ul>
-            <li>You could live longer.</li>
-            <li>Your body may process glucose (or sugar) better.</li>
-            <li>You're less likely to develop heart failure.</li>
-        </ul>
-        <br>
-        <br>
-        <h3 class="price">Price: 20$</h3>
-    </div>
-    <div class="purchase-info">            
-        <h3 class="add-to-cart"><a href="">Add to cart</a></h3>
-        <h3 class="back-to-menu"><a href="../../pages/menu/menu.html">Back to menu</a></h3>
-    </div>
+    <div class="main-product">
+        <img src="../../images/productes/coffee.jpg">
+        <div class="product-area-text">
+            <h2>COFFEE</h2>
+            <br>
+            <h4>Benefits of Coffee:</h4>
+            <br>
+            <ul>
+                <li>You could live longer.</li>
+                <li>Your body may process glucose (or sugar) better.</li>
+                <li>You're less likely to develop heart failure.</li>
+            </ul>
+        </div>
 
+    </div>
+    <div class="purchase-info">
+        <h4 class="product-options">Product Options</h4>
+        <a href="../menu/menu.html"><h4 class="back-to-menu">Back to menu</h4></a>
+    </div>
 </main>
-<h2 class="people-also-buy">People also buy</h2>
+<div class="options-area">
+    <div class="size">
+        <div class="size-title">Size</div>
+        <div class="size-option">XL</div>
+        <div class="size-option">L</div>
+        <div class="size-option">M</div>
+        <div class="size-option">S</div>
+    </div>
+    <script>
+        const productOptions = document.querySelector(".product-options");
+        const optionsArea = document.querySelector(".options-area");
+        productOptions.onclick = function () {
+            optionsArea.classList.toggle("hidden");
+        }
+        
+    </script>
+</div>
+<h2 class="people-also-buy">YOU MAY ALSO LIKE</h2>
 <main class="similar-items">
     
     <div class="similar-item"> 
