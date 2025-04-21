@@ -119,7 +119,12 @@ nav {
 .links a:hover:after {
     width: 100%;
 }
-
+.nav-links .active a {     
+    font-weight: bold;
+}
+.nav-links .active a::after {     
+    width: 100%;
+}
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/productes/coffee.jpg');
