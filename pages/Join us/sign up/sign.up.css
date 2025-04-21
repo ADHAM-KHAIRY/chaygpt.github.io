@@ -169,17 +169,15 @@
     color:var(--text-color)
   }
 
-  .logo {
-    width: 110px;
-    height: 100px;
-    background-color:var(--light-bg);
+  img {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color:var(--text-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+  }
+  img:hover {
+    transform: translatey(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
