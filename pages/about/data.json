@@ -10,13 +10,13 @@
     "github": "hamzaShiba7", 
     "name": "Hamza",
     "pages": "Productes template",
-    "skills": ["C", "Git", "CSS", "HTML"],
+    "skills": ["C", "Git", "CSS", "HTML","javascript","Linux"],
     "image": "../../images/hamza.jpg"
     },
     {
-    "github": "", 
+    "github": "abdosamy878", 
     "name": "Abdelrahman S.",
-    "pages": "Not yet",
+    "pages": "Login - Signup",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/abdo1.jpg"
     },
@@ -56,7 +56,7 @@
     "image": "../../images/abdoo.jpg"
     },
     {
-    "github": "", 
+    "github": "D0umzz", 
     "name": "Adam",
     "pages": "Not yet",
     "skills": ["C", "CSS", "HTML","Git"],

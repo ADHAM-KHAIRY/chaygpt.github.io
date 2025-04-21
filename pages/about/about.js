@@ -16,7 +16,7 @@ async function getDevelopersData() {
             <h3>${developerData.name}</h3>
                 <div class="member-details">
                         <p class="member-label">Contributions:</p>
-                        <p class="member-value lines-count" data-username="${developerData.github}">0 lines</p>
+                        <p class="member-value lines-count" data-username="${developerData.github}">Loading....</p>
                         <p class="member-label">Pages:</p>
                         <p class="member-value">${developerData.pages}</p>
                 </div>
@@ -28,7 +28,7 @@ async function getDevelopersData() {
         grid.appendChild(developer);
     });
 }
-getDevelopersData();
+
 async function loadlines() {
     async function loadData() {
         const url = "https://api.github.com/repos/ADHAM-KHAIRY/chaygpt.github.io/stats/contributors";
@@ -56,6 +56,8 @@ async function loadlines() {
         });    
 }
 
-for (let i =0 ; i<10;i++){
-    loadlines();
+async function main() {
+    await getDevelopersData();
+    await loadlines();
 }
+main();
