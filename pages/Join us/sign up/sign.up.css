@@ -165,8 +165,7 @@
     margin-bottom: 10px;
     font-size: 28px;
     font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    color:var(--text-color)
+    color:var(--text-color);
   }
 
   img {
