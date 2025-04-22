@@ -7,32 +7,50 @@
   
 </head>
 <body>
-  <div class="container">
-    <a href="/index.html"><img src="/images/chay-gpt-logo.jpg" alt="ChayGPT Logo"></a>
-    <h1>login</h1>
-    
-    <form action="#" method="get">
-      <div class="user">
-        <input type="text" id="username" placeholder="username or email" required>
-      </div>
-      
-      <div class="pas">
-        <input type="password" id="password" placeholder="password" required minlength="8" maxlength="15">
-      </div>
-      
-      <div class="Remember">
-        <input type="checkbox" id="remb">
-        <label for="remb">Remember Me </label>
-      </div>
-      
-      <input type="submit" value="login" class="login">
-      
-      <a href="#" class="forpass">Forget password</a>
-    </form>
-    
-    <div class="signup-text">
-        Don't Have an Account?<a href="/pages/Join us/sign up/ChayGpt.signup.html" class="sign"> sign up</a>
+  <main>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-toggle">
+                <a href="login.html" class="active">Login</a>
+              
+            </div>
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Login to access your account</p>
+            
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Your password" required>
+                    <div class="forgot-password">
+                        <a href="forgot-password.html">Forgot password?</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            
+            <div class="social-login">
+                <p>Or login with</p>
+                <div class="social-buttons">
+                    <button class="social-btn google-btn">
+                        <img src="/images/" alt="Google">
+                        Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <img src="/images/facebook-icon.png" alt="Facebook">
+                        Facebook
+                    </button>
+                </div>
+            </div>
+            
+            <p class="auth-redirect">Don't have an account? <a href="/pages/Join us/sign up/ChayGpt.signup.html">Sign up</a></p>
+        </div>
     </div>
-  </div>
+  </main>
+ 
 </body>
 </html
