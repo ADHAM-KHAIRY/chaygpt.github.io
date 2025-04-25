@@ -11,9 +11,29 @@
   --facebook-color: #3b5998;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  color: var(--text-color);
+  background-color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
 .auth-container {
   max-width: 500px;
-  margin: 2rem auto 4rem;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -103,6 +123,13 @@
 .form-group input:focus {
   outline: none;
   border-color: var(--primary-color);
+}
+
+.password-hint {
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.5rem;
 }
 
 .terms-check {
@@ -217,3 +244,4 @@
   color: var(--dark-primary);
   text-decoration: underline;
 }
+
