@@ -107,4 +107,60 @@
 .r-cart .item .name , .r-cart .item .returnprice{
   font-weight: bold;
   font-size: large;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links img {
+  width: 32px;
+  height: 32px;
+  transition: var(--transition);
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+=======
+>>>>>>> 2cc6456 (")
+>>>>>>> temp-branch
 }
