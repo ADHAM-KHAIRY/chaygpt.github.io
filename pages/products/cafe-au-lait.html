@@ -1,105 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ChayGPT</title>
-    <link rel="stylesheet" href="../../pages/products/product-style.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ChayGPT's Cafe au Lait - Enjoy our premium French-style coffee with steamed milk prepared with care and tradition.">
+        <meta name="keywords" content="cafe au lait, french coffee, coffee with milk, ChayGPT, premium coffee">
+        <meta name="author" content="ChayGPT">
+        <meta property="og:title" content="ChayGPT - Cafe au Lait">
+        <meta property="og:description" content="Discover our delicious Cafe au Lait made with premium coffee beans and fresh milk">
+        <meta property="og:image" content="../../images/chaygpt-logo.jpg">
+        <meta property="og:url" content="https://chaygpt.com/pages/products/cafe-au-lait.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <title>Cafe au Lait - ChayGPT</title>
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&family=Rakkas&display=swap" rel="stylesheet">
+        <link rel="icon" href="../../images/chaygpt-logo.jpg" type="image/jpg">
+        <style>
+            /* Product-specific styles */
+            .product-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 2rem 5%;
+            }
+            
+            .product-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/productes/cafe-au-lait.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 400px;
+                width: 100%;
+                border-radius: 20px;
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .product-title {
+                color: var(--white);
+                font-family: 'Rakkas', serif;
+                font-size: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            
+            .product-info-container {
+                display: flex;
+                gap: 2rem;
+                margin-bottom: 3rem;
+                background-color: var(--white);
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .product-image {
+                width: 40%;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .product-image img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+            
+            .product-image img:hover {
+                transform: scale(1.03);
+            }
+            
+            .product-details {
+                flex: 1;
+            }
+            
+            .product-details h2 {
+                font-family: 'Rakkas', serif;
+                font-size: 2rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+            
+            .product-price {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #996b08;
+                margin-bottom: 1.5rem;
+            }
+            
+            .product-description {
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+                color: #555;
+            }
+            
+            .product-features {
+                margin-bottom: 2rem;
+            }
+            
+            .product-features h3 {
+                font-family: 'Oswald', sans-serif;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+            
+            .features-list {
+                list-style: disc;
+                padding-left: 1.5rem;
+                color: #555;
+            }
+            
+            .features-list li {
+                margin-bottom: 0.5rem;
+            }
+            
+            .buy-button {
+                display: inline-block;
+                background-color: var(--primary-color);
+                color: var(--white);
+                font-weight: bold;
+                padding: 0.8rem 2rem;
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 1rem;
+            }
+            
+            .buy-button:hover {
+                background-color: var(--dark-primary);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .preparation-section, .ingredients-section, .related-products-section {
+                width: 100%;
+                margin-bottom: 3rem;
+                background-color: var(--white);
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .section-title {
+                font-family: 'Rakkas', serif;
+                font-size: 1.8rem;
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .section-title:after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 3px;
+                background-color: var(--secondary-color);
+                bottom: -10px;
+                left: 0;
+            }
+            
+            .preparation-steps, .ingredients-list {
+                list-style: decimal;
+                padding-left: 1.5rem;
+                color: #555;
+                line-height: 1.8;
+            }
+            
+            .preparation-steps li, .ingredients-list li {
+                margin-bottom: 1rem;
+            }
+            
+            .related-products {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 2rem;
+            }
+            
+            @media (max-width: 768px) {
+                .product-info-container {
+                    flex-direction: column;
+                }
+                
+                .product-image {
+                    width: 100%;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+
 <body>
-    
-
-<header>
-    <nav>
-        <div class="main-logo">
-            <img src="../../images/chay-gpt-logo.jpg" >
-        </div>
-        <p class="brand-name">ChayGPT</p>
-        <ul class="nav-links">
-            <li class="links"><a href="../../pages/about/about.html">About</a></li>
-            <li class="links"><a href="../../pages/contact/contact.html">Contact</a></li>
-            <li class="links"><a href="../../pages/menu/menu.html">menu</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main class="product-area">
-    <img src="../../images/productes/cafe-au-lait.jpg">
-    <div class="product-area-text">
-        <h2>Cafe au lait</h2>
-        <h4>Benefits of Cafe au lait:</h4>
-        <ul>
-            <li>You'll stay lean and satiated.</li>
-            <li>Aid in weight management.</li>
-            <li>important for building and repairing lean muscle.</li>
-        </ul>
-        <br>
-        <br>
-        <h3 class="price">Price:25$</h3>
-    </div>
-    <div class="purchase-info">            
-        <h3 class="add-to-cart"><a href="">Add to cart</a></h3>
-        <h3 class="back-to-menu"><a href="../../pages/menu/menu.html">Back to menu</a></h3>
-    </div>
-
-</main>
-<h2 class="people-also-buy">People also buy</h2>
-<main class="similar-items">
-    
-    <div class="similar-item"> 
-        <a href="coffee.html"><img src="../../images/productes/coffee.jpg">
-        <p>Coffee  <br><small>20$</small></p></a>
-    </div>
-    <div class="similar-item"> 
-        <a href="iced-coffee.html"><img src="../../images/productes/iced-coffee.jpg">
-        <p>Iced Coffee  <br><small>40$</small></p></a>
-    </div>            
-    <div class="similar-item"> 
-        <a href="espresso.html"><img src="../../images/productes/espresso.jpg">
-        <p>Espresso  <br><small>20$</small></p></a>
-    </div>
-    <a class="see-more-products" href="../../pages/menu.html">See more</a>
-
-</main>
-
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>ChayGPT - The best coffee shop in Helwan.</p>
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../menu/menu.html">Menu</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
-                <li><a href="../menu/menu.html">Order Now</a></li>
+    <header>
+        <nav>
+            <div class="main-logo">
+                <img src="../../images/chaygpt-logo.jpg" alt="ChayGPT Logo">
+            </div>
+            <h1 class="brand-name">ChayGPT</h1>
+            <ul class="nav-links">
+                <li class="links"><a href="../../pages/about/about.html">About</a></li>
+                <li class="links"><a href="../../pages/contact/contact.html">Contact</a></li>
+                <li class="links"><a href="../../pages/menu/menu.html">Menu</a></li>
             </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Legal</h3>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Refund Policy</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="https://github.com/ADHAM-KHAIRY/chaygpt.github.io" target ="_blank"> <img src="/images/github-icon.png" alt="Github"> </a>
-                <a href="https://www.facebook.com/" target ="_blank"> <img src="/images/facebook-icon.png" alt="Facebook"> </a>
-                <a href="https://www.instagram.com/" target ="_blank"> <img src="/images/instagram-icon.png" alt="Instagram"> </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-container">
+            <div class="product-hero">
+                <h1 class="product-title">Cafe au Lait</h1>
+            </div>
+            
+            <div class="product-info-container">
+                <div class="product-image">
+                    <img src="../../images/productes/cafe-au-lait.jpg" alt="ChayGPT's Cafe au Lait">
+                </div>
+                <div class="product-details">
+                    <h2>Traditional French Cafe au Lait</h2>
+                    <p class="product-price">$16</p>
+                    <p class="product-description">
+                        Experience the perfect balance of boldness and creaminess with our authentic Cafe au Lait. This 
+                        classic French beverage combines our signature dark-roasted coffee with steamed milk in equal 
+                        parts, creating a smooth, velvety texture that warms the soul. Each cup is prepared with care, 
+                        using only premium coffee beans and fresh, locally-sourced milk.
+                    </p>
+                    <div class="product-features">
+                        <h3>What makes our Cafe au Lait special:</h3>
+                        <ul class="features-list">
+                            <li>Premium dark-roasted coffee beans for rich flavor</li>
+                            <li>Equal parts coffee and steamed milk for perfect balance</li>
+                            <li>Velvety smooth texture with gentle foam</li>
+                            <li>Served in traditional wide-bowl cups</li>
+                            <li>Customizable with organic sweeteners</li>
+                        </ul>
+                    </div>
+                    <a href="../menu/menu.html" class="buy-button">Add to Order</a>
+                </div>
+            </div>
+            
+            <div class="preparation-section">
+                <h2 class="section-title">How We Prepare It</h2>
+                <ol class="preparation-steps">
+                    <li>We start with freshly ground premium dark-roasted coffee beans.</li>
+                    <li>The coffee is brewed using traditional French press method for full-bodied flavor.</li>
+                    <li>Fresh whole milk is gently steamed to create a silky microfoam.</li>
+                    <li>Equal parts coffee and steamed milk are combined in perfect harmony.</li>
+                    <li>The beverage is served in our signature wide-bowl cups to enhance the aroma experience.</li>
+                    <li>Optional organic sweeteners are available on request.</li>
+                </ol>
+            </div>
+            
+            <div class="ingredients-section">
+                <h2 class="section-title">Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li>Premium dark-roasted coffee beans (Brazilian and Colombian blend)</li>
+                    <li>Fresh locally-sourced whole milk</li>
+                    <li>Filtered water</li>
+                    <li>Optional: organic cane sugar, maple syrup, or honey</li>
+                </ul>
+            </div>
+            
+            <div class="related-products-section">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="related-products">
+                    <div class="item"> 
+                        <a href="./coffee.html">
+                            <img src="../../images/productes/coffee.jpg" alt="Premium Arabic Coffee">
+                            <div class="item-info">
+                                <p>Coffee</p>
+                                <p>$20</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="item"> 
+                        <a href="./milk-tea.html">
+                            <img src="../../images/productes/milk-tea.jpg" alt="Milk Tea">
+                            <div class="item-info">
+                                <p>Milk Tea</p>
+                                <p>$15</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="item"> 
+                        <a href="./iced-coffee.html">
+                            <img src="../../images/productes/iced-coffee.jpg" alt="Premium Iced Coffee">
+                            <div class="item-info">
+                                <p>Iced Coffee</p>
+                                <p>$18</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <p class="copyright">© 2025 ChayGPT Coffee. All Rights Reserved.</p>
-</footer>
+    </main>
+
+    <footer>
+        <section class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ChayGPT - The best coffee shop in Helwan, serving premium tea and coffee since 2022.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../pages/menu/menu.html">Menu</a></li>
+                    <li><a href="../../pages/contact/contact.html">Contact</a></li>
+                    <li><a href="../../pages/menu/menu.html">Order Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="../../pages/legal/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../../pages/legal/terms.html">Terms of Service</a></li>
+                    <li><a href="../../pages/legal/refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://github.com/ADHAM-KHAIRY/chaygpt.github.io" target="_blank" rel="noopener noreferrer">
+                        <img src="../../images/github-icon.png" alt="Github">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="../../images/facebook-icon.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="../../images/instagram-icon.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <p class="copyright">© 2025 ChayGPT Coffee. All Rights Reserved.</p>
+    </footer>
 </body>
+</html>
