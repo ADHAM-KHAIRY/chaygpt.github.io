@@ -110,8 +110,7 @@
   margin-top: 10px;
   border: none;
   background-color: #d8e0cc;
-  color: white;
-}
+  color: #4a563a;}
 .checkoutlayout .row{
   display: flex;
   justify-content: space-between;
@@ -132,8 +131,21 @@
   border: none;
   margin-top: 20px;
   font-weight: bold;
-  color: white;
-  background-color: #333;
+  background-color: #d8e0cc;
+  color: #4a563a;
+  /*
+  #d8e0cc white
+  #4a563a green
+  */
+}
+.buttoncheckout:hover{
+  transition: background-color 1s ease;
+  /*background-color: #4a563a;
+  color: #d8e0cc;*/
+  transition: 1.4s;
+  /*transform: translateY(-8px); */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 2);
+  transform: scale(1.1);
 }
 
 .r-cart .back-to-the-menu{
