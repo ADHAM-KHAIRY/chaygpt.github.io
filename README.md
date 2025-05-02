@@ -23,20 +23,35 @@ chaygpt.github.io
 ├── pages
 │   ├── about
 │   │   ├── about.css
-│   │   └── about.html
+│   │   ├── about.html
+│   │   ├── about.js
+│   │   └── data.json
 │   ├── contact
 │   │   ├── contact.css
 │   │   └── contact.html
 │   ├── menu
 │   │   ├── menu.css
 │   │   └── menu.html
-│   └── productes
+│   ├── checkout
+│   │   ├── checkout.css
+│   │   └── checkout.html
+│   │── products
+│   │   ├── *.html
+│   │   └── product-style.css
+│   ├── join-us
+│   │   ├── login
+│   │   │   ├── login.css
+│   │   │   └── login.html
+│   │   ├── sign-up
+│   │   │   ├── sign-up.css
+│   │   │   └── signup.html
+│   │   ├── welcome.css
+│   │   └── welcome.html
 ├── images
 │   ├── *.jpg
 │   └── productes
 │       └── *.jpg
 └── README.md
-
 ```
 ---
 ## 🏷️ Products
