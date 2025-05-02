@@ -256,6 +256,12 @@ a {
 .nav-links li a:hover:after {
     width: 100%;
 }
+.nav-links .active a {     
+    font-weight: bold;
+}
+.nav-links .active a::after {     
+    width: 100%;
+}
 
 footer {
     background-color: var(--primary-color);
