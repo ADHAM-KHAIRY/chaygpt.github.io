@@ -120,13 +120,13 @@
         }
       },
       {
-        "id": "mint-hotdrink",
+        "id": "mint",
         "name": "Mint Infusion",
         "description": "A soothing herbal infusion of premium mint leaves, known for its digestive benefits.",
         "price": 3.50,
         "ingredients": ["Dried mint leaves", "Filtered water", "Optional honey"],
         "options": ["Small", "Medium", "Large"],
-        "image": "mint-infusion.jpg",
+        "image": "mint.jpg",
         "category": "Hot Drinks",
         "allergens": [],
         "nutritionalInfo": {
@@ -143,7 +143,7 @@
         "price": 3.25,
         "ingredients": ["Star anise", "Filtered water", "Optional honey"],
         "options": ["Small", "Medium", "Large"],
-        "image": "anise-brew.jpg",
+        "image": "anise.jpg",
         "category": "Hot Drinks",
         "allergens": [],
         "nutritionalInfo": {
@@ -160,7 +160,7 @@
         "price": 4.25,
         "ingredients": ["Moringa leaves", "Filtered water", "Optional lemon"],
         "options": ["Small", "Medium", "Large"],
-        "image": "moringa-elixir.jpg",
+        "image": "moringa.jpg",
         "category": "Hot Drinks",
         "allergens": [],
         "nutritionalInfo": {
@@ -194,7 +194,7 @@
         "price": 3.50,
         "ingredients": ["Cinnamon sticks", "Filtered water", "Optional honey"],
         "options": ["Small", "Medium", "Large"],
-        "image": "cinnamon-comfort.jpg",
+        "image": "cinnamon.jpg",
         "category": "Hot Drinks",
         "allergens": [],
         "nutritionalInfo": {

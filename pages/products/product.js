@@ -88,7 +88,7 @@ function displayProduct(currentProduct, allProducts, container) {
     product.innerHTML = `
         <main class="product-area">
             <div class="main-product">
-                <img src="../../images/productes/${currentProduct.image}" alt="${currentProduct.name}">
+                <img src="../../images/products/${currentProduct.image}" alt="${currentProduct.name}">
                 <div class="product-area-text">
                     <h2 class="product-name">${currentProduct.name}</h2>
                     <br>
@@ -128,21 +128,22 @@ function displayProduct(currentProduct, allProducts, container) {
             
             <button class="add-to-cart">Add to Cart - $${formattedPrice}</button>
         </div>
-        <div class="ingredients-section">
-            <h2 class="section-title">Ingredients</h2>
-            <ul class="ingredients-list">
-                ${currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-            </ul>
-        </div>
-        
-        <div class="nutritional-info">
-            <h2 class="section-title">Nutritional Information</h2>
-            <div class="nutrition-grid">
-                <div class="nutrition-item">Calories: ${currentProduct.nutritionalInfo.calories}</div>
-                <div class="nutrition-item">Fat: ${currentProduct.nutritionalInfo.fat}g</div>
-                <div class="nutrition-item">Protein: ${currentProduct.nutritionalInfo.protein}g</div>
-                <div class="nutrition-item">Caffeine: ${currentProduct.nutritionalInfo.caffeine}</div>
+        <div class="product-info">
+            <div class="ingredients-section">
+                <h2 class="section-title">Ingredients</h2>
+                <ul class="ingredients-list">
+                    ${currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
             </div>
+            <div class="nutritional-info">
+                <h2 class="section-title">Nutritional Information</h2>
+                    <div class="nutrition">
+                    <div class="nutrition-item">Calories: ${currentProduct.nutritionalInfo.calories}</div>
+                    <div class="nutrition-item">Fat: ${currentProduct.nutritionalInfo.fat}g</div>
+                    <div class="nutrition-item">Protein: ${currentProduct.nutritionalInfo.protein}g</div>
+                    <div class="nutrition-item">Caffeine: ${currentProduct.nutritionalInfo.caffeine}</div>
+            </div>
+        </div>
         </div>
         
         ${similarProducts.length > 0 ? `
@@ -152,7 +153,7 @@ function displayProduct(currentProduct, allProducts, container) {
                     ${similarProducts.map(item => `
                         <div class="similar-item"> 
                             <a href="${item.id}.html">
-                                <img src="../../images/productes/${item.image}" alt="${item.name}">
+                                <img src="../../images/products/${item.image}" alt="${item.name}">
                                 <p>${item.name}</p>
                                 <p class="similar-price">$${item.price.toFixed(2)}</p>
                             </a>
@@ -184,7 +185,7 @@ function initializeProductInteractions(currentProduct) {
         // Find default size (Medium or first available)
         const defaultSize = currentProduct.options.find(opt => opt === 'Medium' || opt === 'M') || 
                         currentProduct.options.find(opt => 
-                            ['Small', 'Medium', 'Large', 'XL', 'S', 'M', 'L'].includes(opt)
+                            ['Small', 'Medium', 'Large'].includes(opt)
                         );
         
         // Set default selected size
@@ -323,209 +324,7 @@ function displayErrorMessage(container, message) {
 function addProductStyles() {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
-        .product {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .main-product {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .main-product img {
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .product-area-text {
-            flex: 1;
-        }
-        
-        .product-name {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        
-        .product-description {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .product-price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4a6741;
-        }
-        
-        .allergens {
-            font-style: italic;
-            color: #777;
-        }
-        
-        .purchase-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .product-options {
-            cursor: pointer;
-            color: #4a6741;
-        }
-        
-        .back-to-menu {
-            color: #4a6741;
-        }
-        
-        .options-area {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            display: none;
-        }
-        
-        .options-area.show {
-            display: block;
-        }
-        
-        .size, .milk-options {
-            margin-bottom: 20px;
-        }
-        
-        .size-title, .milk-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .size-option {
-            display: inline-block;
-            padding: 8px 15px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .size-option.selected {
-            background-color: #4a6741;
-            color: white;
-            border-color: #4a6741;
-        }
-        
-        .size-info {
-            margin: 15px 0;
-        }
-        
-        #milk-choice {
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        
-        .add-to-cart {
-            background-color: #4a6741;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .add-to-cart:hover {
-            background-color: #3a5331;
-        }
-        
-        .section-title {
-            border-bottom: 2px solid #4a6741;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .ingredients-list {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .ingredients-list li {
-            margin-bottom: 5px;
-        }
-        
-        .nutritional-info {
-            margin-bottom: 30px;
-        }
-        
-        .nutrition-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-        }
-        
-        .nutrition-item {
-            background-color: #f1f7ef;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-        }
-        
-        .similar-items-box {
-            margin-top: 40px;
-        }
-        
-        .people-also-buy {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .similar-items {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .similar-item {
-            width: 200px;
-            text-align: center;
-        }
-        
-        .similar-item img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        
-        .similar-item img:hover {
-            transform: scale(1.05);
-        }
-        
-        .similar-item p {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        
-        .similar-price {
-            color: #4a6741;
-        }
-        
-        .see-more-products {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #4a6741;
-            text-decoration: underline;
-        }
-        
+    
         .error-message {
             text-align: center;
             padding: 50px 20px;
