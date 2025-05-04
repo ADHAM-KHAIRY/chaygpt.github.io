@@ -133,6 +133,7 @@
   font-weight: bold;
   background-color: #d8e0cc;
   color: #4a563a;
+  transition: all 0.5s ease;
   /*
   #d8e0cc white
   #4a563a green
@@ -142,12 +143,17 @@
   transition: background-color 1s ease;
   /*background-color: #4a563a;
   color: #d8e0cc;*/
-  transition: 1.4s;
-  /*transform: translateY(-8px); */
+  transition: 1s;
+  transform: translateY(-8px); 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 2);
-  transform: scale(1.1);
+  /*transform: scale(1);*/
 }
-
+.buttoncheckout:active {
+  transition: .1ms;
+  background-color: #4a563a;
+  color:#d8e0cc ;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 2);
+}
 .r-cart .back-to-the-menu{
   text-decoration: none;
   position: relative;
