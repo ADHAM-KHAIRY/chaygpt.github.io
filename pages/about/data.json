@@ -17,7 +17,7 @@
     "github": "abdosamy878", 
     "name": "Abdelrahman S.",
     "pages": "Login - Signup",
-    "skills": ["C", "CSS", "HTML" , "javascript"],
+    "skills": ["C", "CSS", "HTML" , "javascript" , "Git"],
     "image": "../../images/abdo1.jpg"
     },
     {
@@ -38,21 +38,21 @@
     "github": "Youssefs10", 
     "name": "Youssef",
     "pages": "50% of Menu",
-    "skills": ["C", "CSS", "HTML"],
+    "skills": ["C", "CSS", "HTML", "Git"],
     "image": "../../images/joe.jpg"
     },
     {
     "github": "xsfvFdf" , 
     "name": "Seif",
     "pages": "50% of Menu",
-    "skills": ["C", "CSS", "HTML"],
+    "skills": ["C", "CSS", "HTML", "Git"],
     "image": "../../images/seif.jpg"
     },
     {
     "github": "abd01122", 
     "name": "Abdelrahman T.",
     "pages": "Not yet",
-    "skills": ["C", "CSS", "HTML"],
+    "skills": ["C", "CSS", "HTML", "Git"],
     "image": "../../images/abdoo.jpg"
     },
     {
