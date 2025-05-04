@@ -23,20 +23,35 @@ chaygpt.github.io
 ├── pages
 │   ├── about
 │   │   ├── about.css
-│   │   └── about.html
+│   │   ├── about.html
+│   │   ├── about.js
+│   │   └── data.json
 │   ├── contact
 │   │   ├── contact.css
 │   │   └── contact.html
 │   ├── menu
 │   │   ├── menu.css
 │   │   └── menu.html
-│   └── productes
+│   ├── checkout
+│   │   ├── checkout.css
+│   │   └── checkout.html
+│   │── products
+│   │   ├── *.html
+│   │   └── product-style.css
+│   ├── join-us
+│   │   ├── login
+│   │   │   ├── login.css
+│   │   │   └── login.html
+│   │   ├── sign-up
+│   │   │   ├── sign-up.css
+│   │   │   └── signup.html
+│   │   ├── welcome.css
+│   │   └── welcome.html
 ├── images
 │   ├── *.jpg
-│   └── productes
+│   └── products
 │       └── *.jpg
 └── README.md
-
 ```
 ---
 ## 🏷️ Products
@@ -49,30 +64,30 @@ chaygpt.github.io
 -ice tea
 
 # hotdrinks
--Ment
--Anise
--Moringa
--Hot choclate
--Cinnamon
+-mint
+-anise
+-moringa
+-hot choclate
+-cinnamon
 -sahlab
 
 # caffine
--coffe
--cafe au lite
+-coffee
+-cafe au lait
 -latte
 -cappuccino
 -espresso
 -mocha
--flate white
+-flat white
 -nescafe
 -matcha
--ice coffe
+-ice coffee
 
 # Fresh juices
  -mango juice
  -orange juice
- -limon juice
- -mint limon juice
+ -lemon juice
+ -mint lemon juice
  -strawberry juice
  -melon juice
  -watermelon juice

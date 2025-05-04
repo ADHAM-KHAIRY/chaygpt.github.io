@@ -1,0 +1,480 @@
+{
+    "products": [
+      {
+        "id": "coffee",
+        "name": "Classic Coffee",
+        "description": "Our signature blend of premium Arabica beans, carefully roasted to perfection.",
+        "price": 3.99,
+        "ingredients": ["Arabica coffee beans", "Filtered water"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "coffee.jpg",
+        "category": "Caffeine",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "95mg"
+        }
+      },
+      {
+        "id": "tea",
+        "name": "Organic Green Tea",
+        "description": "Delicate green tea leaves sourced from organic farms in Japan.",
+        "price": 2.99,
+        "ingredients": ["Organic green tea leaves", "Filtered water"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "green-tea.jpg",
+        "category": "Tea",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 2,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "28mg"
+        }
+      },
+      {
+        "id": "cafe-au-lait",
+        "name": "Café au Lait",
+        "description": "A French classic featuring our house blend coffee with steamed milk.",
+        "price": 4.50,
+        "ingredients": ["Arabica coffee beans", "Steamed milk", "Filtered water"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk"],
+        "image": "cafe-au-lait.jpg",
+        "category": "Caffeine",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 120,
+          "fat": 6,
+          "protein": 4,
+          "caffeine": "75mg"
+        }
+      },
+      {
+        "id": "mint-tea",
+        "name": "Fresh Mint Tea",
+        "description": "Refreshing tea made with hand-picked mint leaves, perfect for relaxation.",
+        "price": 3.50,
+        "ingredients": ["Fresh mint leaves", "Filtered water", "Optional honey"],
+        "options": ["Small", "Medium", "Large", "With honey", "Without honey"],
+        "image": "mint-tea.jpg",
+        "category": "Tea",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 2,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "lemon-tea",
+        "name": "Zesty Lemon Tea",
+        "description": "Black tea infused with fresh lemon, offering a citrusy twist to a classic favorite.",
+        "price": 3.25,
+        "ingredients": ["Black tea leaves", "Fresh lemon slices", "Filtered water", "Optional honey"],
+        "options": ["Small", "Medium", "Large", "Hot", "Iced"],
+        "image": "lemon-tea.jpg",
+        "category": "Tea",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "30mg"
+        }
+      },
+      {
+        "id": "milk-tea",
+        "name": "Creamy Milk Tea",
+        "description": "Rich black tea blended with steamed milk for a smooth, comforting experience.",
+        "price": 3.75,
+        "ingredients": ["Black tea leaves", "Milk", "Filtered water", "Optional sugar"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk"],
+        "image": "milk-tea.jpg",
+        "category": "Tea",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 80,
+          "fat": 3,
+          "protein": 3,
+          "caffeine": "30mg"
+        }
+      },
+      {
+        "id": "ice-tea",
+        "name": "Refreshing Iced Tea",
+        "description": "Cold-brewed black tea served over ice, the perfect cooler for warm days.",
+        "price": 3.25,
+        "ingredients": ["Black tea leaves", "Filtered water", "Ice", "Optional lemon slice"],
+        "options": ["Small", "Medium", "Large", "With lemon", "With mint"],
+        "image": "ice-tea.jpg",
+        "category": "Tea",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "30mg"
+        }
+      },
+      {
+        "id": "mint",
+        "name": "Mint Infusion",
+        "description": "A soothing herbal infusion of premium mint leaves, known for its digestive benefits.",
+        "price": 3.50,
+        "ingredients": ["Dried mint leaves", "Filtered water", "Optional honey"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "mint.jpg",
+        "category": "Hot Drinks",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 2,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "anise",
+        "name": "Anise Brew",
+        "description": "Traditional anise tea with a licorice-like flavor, excellent for digestion.",
+        "price": 3.25,
+        "ingredients": ["Star anise", "Filtered water", "Optional honey"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "anise.jpg",
+        "category": "Hot Drinks",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 3,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "moringa",
+        "name": "Moringa Elixir",
+        "description": "Nutrient-rich moringa leaves steeped to create a healthful, energizing beverage.",
+        "price": 4.25,
+        "ingredients": ["Moringa leaves", "Filtered water", "Optional lemon"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "moringa.jpg",
+        "category": "Hot Drinks",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "hot-chocolate",
+        "name": "Decadent Hot Chocolate",
+        "description": "Rich, velvety hot chocolate made with premium cocoa and steamed milk.",
+        "price": 4.50,
+        "ingredients": ["Premium cocoa powder", "Milk", "Sugar", "Vanilla extract"],
+        "options": ["Small", "Medium", "Large", "Whipped cream", "Marshmallows"],
+        "image": "hot-chocolate.jpg",
+        "category": "Hot Drinks",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 220,
+          "fat": 9,
+          "protein": 8,
+          "caffeine": "5mg"
+        }
+      },
+      {
+        "id": "cinnamon",
+        "name": "Cinnamon Comfort",
+        "description": "Warming cinnamon infusion, perfect for cold days and soothing relaxation.",
+        "price": 3.50,
+        "ingredients": ["Cinnamon sticks", "Filtered water", "Optional honey"],
+        "options": ["Small", "Medium", "Large"],
+        "image": "cinnamon.jpg",
+        "category": "Hot Drinks",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "sahlab",
+        "name": "Traditional Sahlab",
+        "description": "Middle Eastern hot milk drink thickened with sahlab powder, topped with nuts and cinnamon.",
+        "price": 4.75,
+        "ingredients": ["Milk", "Sahlab powder", "Sugar", "Cinnamon", "Pistachios", "Coconut flakes"],
+        "options": ["Small", "Medium", "Large", "Extra nuts"],
+        "image": "sahlab.jpg",
+        "category": "Hot Drinks",
+        "allergens": ["Milk", "Nuts"],
+        "nutritionalInfo": {
+          "calories": 250,
+          "fat": 8,
+          "protein": 7,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "latte",
+        "name": "Silky Latte",
+        "description": "Espresso shot topped with velvety steamed milk, creating a perfect balance of coffee and creaminess.",
+        "price": 4.50,
+        "ingredients": ["Espresso", "Steamed milk", "Optional flavor syrup"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk", "Vanilla", "Caramel", "Hazelnut"],
+        "image": "latte.jpg",
+        "category": "Caffeine",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 120,
+          "fat": 4,
+          "protein": 8,
+          "caffeine": "75mg"
+        }
+      },
+      {
+        "id": "cappuccino",
+        "name": "Classic Cappuccino",
+        "description": "Equal parts espresso, steamed milk, and milk foam for a traditional Italian experience.",
+        "price": 4.25,
+        "ingredients": ["Espresso", "Steamed milk", "Milk foam"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk", "Cinnamon dust"],
+        "image": "cappuccino.jpg",
+        "category": "Caffeine",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 110,
+          "fat": 4,
+          "protein": 7,
+          "caffeine": "75mg"
+        }
+      },
+      {
+        "id": "espresso",
+        "name": "Robust Espresso",
+        "description": "Concentrated coffee served in a small shot, the pure essence of our premium beans.",
+        "price": 2.75,
+        "ingredients": ["Finely ground coffee beans", "Filtered water"],
+        "options": ["Single shot", "Double shot"],
+        "image": "espresso.jpg",
+        "category": "Caffeine",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 2,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "63mg"
+        }
+      },
+      {
+        "id": "mocha",
+        "name": "Indulgent Mocha",
+        "description": "The perfect marriage of espresso, chocolate, and steamed milk topped with whipped cream.",
+        "price": 4.95,
+        "ingredients": ["Espresso", "Chocolate syrup", "Steamed milk", "Whipped cream"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk", "Extra chocolate"],
+        "image": "mocha.jpg",
+        "category": "Caffeine",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 250,
+          "fat": 8,
+          "protein": 7,
+          "caffeine": "80mg"
+        }
+      },
+      {
+        "id": "flat-white",
+        "name": "Velvety Flat White",
+        "description": "Espresso with microfoam steamed milk, creating a smooth, rich coffee experience.",
+        "price": 4.50,
+        "ingredients": ["Espresso", "Microfoam steamed milk"],
+        "options": ["Small", "Medium", "Large", "Oat milk", "Almond milk", "Soy milk"],
+        "image": "flat-white.jpg",
+        "category": "Caffeine",
+        "allergens": ["Milk"],
+        "nutritionalInfo": {
+          "calories": 120,
+          "fat": 5,
+          "protein": 8,
+          "caffeine": "80mg"
+        }
+      },
+      {
+        "id": "nescafe",
+        "name": "Premium Instant Coffee",
+        "description": "Quality instant coffee with a rich aroma, offering convenience without sacrificing taste.",
+        "price": 2.99,
+        "ingredients": ["Instant coffee granules", "Hot water", "Optional milk", "Optional sugar"],
+        "options": ["Black", "With milk", "With sugar"],
+        "image": "nescafe.jpg",
+        "category": "Caffeine",
+        "allergens": ["May contain milk"],
+        "nutritionalInfo": {
+          "calories": 5,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "65mg"
+        }
+      },
+      {
+        "id": "matcha",
+        "name": "Ceremonial Matcha",
+        "description": "Traditional Japanese green tea powder whisked to frothy perfection, rich in antioxidants.",
+        "price": 5.25,
+        "ingredients": ["Premium matcha powder", "Hot water", "Optional milk"],
+        "options": ["Traditional", "Latte style", "Oat milk", "Almond milk", "Soy milk"],
+        "image": "matcha.jpg",
+        "category": "Caffeine",
+        "allergens": ["May contain milk"],
+        "nutritionalInfo": {
+          "calories": 40,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "70mg"
+        }
+      },
+      {
+        "id": "ice-coffee",
+        "name": "Refreshing Iced Coffee",
+        "description": "Cold-brewed coffee served over ice for a smooth, less acidic coffee experience.",
+        "price": 4.25,
+        "ingredients": ["Cold brew coffee", "Ice", "Optional milk", "Optional syrup"],
+        "options": ["Black", "With milk", "Vanilla", "Caramel", "Hazelnut"],
+        "image": "ice-coffee.jpg",
+        "category": "Caffeine",
+        "allergens": ["May contain milk"],
+        "nutritionalInfo": {
+          "calories": 15,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "90mg"
+        }
+      },
+      {
+        "id": "mango-juice",
+        "name": "Pure Mango Juice",
+        "description": "Freshly squeezed sweet mangoes, rich in tropical flavor and natural goodness.",
+        "price": 4.95,
+        "ingredients": ["Fresh mangoes", "Ice", "Optional mint garnish"],
+        "options": ["Small", "Medium", "Large", "With mint", "Extra sweet"],
+        "image": "mango-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 140,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "orange-juice",
+        "name": "Fresh-Squeezed Orange Juice",
+        "description": "Vibrant juice from freshly squeezed oranges, packed with vitamin C.",
+        "price": 4.50,
+        "ingredients": ["Fresh oranges", "Ice", "Optional pulp"],
+        "options": ["Small", "Medium", "Large", "With pulp", "No pulp"],
+        "image": "orange-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 120,
+          "fat": 0,
+          "protein": 2,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "lemon-juice",
+        "name": "Zesty Lemonade",
+        "description": "Tangy fresh-squeezed lemons balanced with just the right amount of sweetness.",
+        "price": 3.95,
+        "ingredients": ["Fresh lemons", "Sugar syrup", "Water", "Ice", "Optional mint garnish"],
+        "options": ["Small", "Medium", "Large", "Sweet", "Less sweet"],
+        "image": "lemon-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 90,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "mint-lemon-juice",
+        "name": "Refreshing Mint Lemonade",
+        "description": "Our zesty lemonade infused with fresh mint leaves for an extra refreshing twist.",
+        "price": 4.25,
+        "ingredients": ["Fresh lemons", "Fresh mint leaves", "Sugar syrup", "Water", "Ice"],
+        "options": ["Small", "Medium", "Large", "Extra mint", "Less sweet"],
+        "image": "mint-lemon-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 95,
+          "fat": 0,
+          "protein": 0,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "strawberry-juice",
+        "name": "Sweet Strawberry Juice",
+        "description": "Blended fresh strawberries creating a naturally sweet and vibrant refreshment.",
+        "price": 4.95,
+        "ingredients": ["Fresh strawberries", "Optional sugar", "Water", "Ice"],
+        "options": ["Small", "Medium", "Large", "Extra sweet", "Sugar-free"],
+        "image": "strawberry-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 110,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "melon-juice",
+        "name": "Honeydew Melon Juice",
+        "description": "Delicately sweet juice from perfectly ripened honeydew melons, naturally refreshing.",
+        "price": 4.75,
+        "ingredients": ["Fresh honeydew melon", "Ice", "Optional mint garnish"],
+        "options": ["Small", "Medium", "Large", "With mint"],
+        "image": "melon-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 100,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "0mg"
+        }
+      },
+      {
+        "id": "watermelon-juice",
+        "name": "Hydrating Watermelon Juice",
+        "description": "Naturally sweet and hydrating juice pressed from fresh watermelon, summer in a glass.",
+        "price": 4.50,
+        "ingredients": ["Fresh watermelon", "Ice", "Optional mint garnish"],
+        "options": ["Small", "Medium", "Large", "With mint"],
+        "image": "watermelon-juice.jpg",
+        "category": "Fresh Juices",
+        "allergens": [],
+        "nutritionalInfo": {
+          "calories": 85,
+          "fat": 0,
+          "protein": 1,
+          "caffeine": "0mg"
+        }
+      }
+    ]
+  }
