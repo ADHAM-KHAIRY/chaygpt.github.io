@@ -127,7 +127,7 @@ nav {
 }
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/productes/coffee.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/products/coffee.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
