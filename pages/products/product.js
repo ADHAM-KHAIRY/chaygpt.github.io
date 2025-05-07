@@ -1,4 +1,34 @@
+// header
 
+const headerHTML = `<header>
+    <nav>
+        <div class="main-logo">
+            <a href="../../index.html"><img src="../../images/chay-gpt-logo.jpg" alt="ChayGPT Logo"></a>
+        </div>
+        <h1 class="brand-name">ChayGPT</h1>
+        <ul class="nav-links">
+            <li class="links"><a href="../../index.html">Home</a></li>
+            <li class="links"><a href="../../pages/about/about.html">About</a></li>
+            <li class="links"><a href="../../pages/contact/contact.html">Contact</a></li>
+            <li class="links"><a href="../../pages/menu/menu.html">Menu</a></li>
+        </ul>
+        <ul class="nav-links">
+            <li class="links"><a href="../checkout/checkout.html">Go to checkout</a></li>
+        </ul>
+    </nav>
+</header>`;
+
+// wait for DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    const headerElement = document.getElementById("header");
+    if (headerElement) {
+        headerElement.innerHTML = headerHTML;
+    } else {
+        console.error("Header element not found");
+    }
+});
+
+// page name
 const fullPath = window.location.pathname;
 const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
 const baseName = fileName.split('.')[0];
@@ -7,7 +37,6 @@ console.log("Base File Name:", baseName);
 //get data from json file
 async function getProductData() {
     try {
-        
         const response = await fetch('product.json');
         if (!response.ok) {
             throw new Error('Failed to fetch product data');
@@ -15,13 +44,11 @@ async function getProductData() {
         const data = await response.json();
         const productData = data.products;
         
-        
         const productContainer = document.querySelector(".product-page");
         if (!productContainer) {
             console.error("Product container not found");
             return;
         }
-        
         
         const currentProduct = productData.find(product => product.id === baseName);
         
@@ -40,38 +67,34 @@ async function getProductData() {
     }
 }
 
-/**
- * 
- * @param {Object} currentProduct - The current product data
- * @param {Array} allProducts  All products data
- * @param {HTMLElement} container  container element
- */
 function displayProduct(currentProduct, allProducts, container) {
-    // Create a product element
+    // remove content
+    container.innerHTML = '';
+    
+    // create product element
     const product = document.createElement("div");
     product.classList.add("product");
     
-    // find similar products
+    // similar products
     const similarProducts = allProducts
         .filter(product => product.id !== currentProduct.id && 
                 (product.category === currentProduct.category || 
                 Math.random() > 0.5)) 
         .slice(0, 3);
     
-    
     const formattedPrice = currentProduct.price.toFixed(2);
     
-    
-    const sizeOptions = currentProduct.options.filter(option => 
+    // Filter size options
+    const sizeOptions = currentProduct.options ? currentProduct.options.filter(option => 
         ['Small', 'Medium', 'Large'].includes(option)
-    );
+    ) : [];
     
-    // milk option or no milk
-    const milkOptions = currentProduct.options.filter(option => 
+    // Filter milk options
+    const milkOptions = currentProduct.options ? currentProduct.options.filter(option => 
         ['Oat milk', 'Almond milk', 'Soy milk'].includes(option)
-    );
+    ) : [];
     
-    // html code
+    // Create HTML content
     product.innerHTML = `
         <main class="product-area">
             <div class="main-product">
@@ -119,18 +142,22 @@ function displayProduct(currentProduct, allProducts, container) {
             <div class="ingredients-section">
                 <h2 class="section-title">Ingredients</h2>
                 <ul class="ingredients-list">
-                    ${currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                    ${currentProduct.ingredients && currentProduct.ingredients.length > 0 ? 
+                      currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('') :
+                      '<li>No ingredients listed</li>'}
                 </ul>
             </div>
             <div class="nutritional-info">
                 <h2 class="section-title">Nutritional Information</h2>
-                    <div class="nutrition">
-                    <div class="nutrition-item">Calories: ${currentProduct.nutritionalInfo.calories}</div>
-                    <div class="nutrition-item">Fat: ${currentProduct.nutritionalInfo.fat}g</div>
-                    <div class="nutrition-item">Protein: ${currentProduct.nutritionalInfo.protein}g</div>
-                    <div class="nutrition-item">Caffeine: ${currentProduct.nutritionalInfo.caffeine}</div>
+                <div class="nutrition">
+                    ${currentProduct.nutritionalInfo ? `
+                        <div class="nutrition-item">Calories: ${currentProduct.nutritionalInfo.calories || 'N/A'}</div>
+                        <div class="nutrition-item">Fat: ${currentProduct.nutritionalInfo.fat || '0'}g</div>
+                        <div class="nutrition-item">Protein: ${currentProduct.nutritionalInfo.protein || '0'}g</div>
+                        <div class="nutrition-item">Caffeine: ${currentProduct.nutritionalInfo.caffeine || 'N/A'}</div>
+                    ` : '<div class="nutrition-item">Nutritional information not available</div>'}
+                </div>
             </div>
-        </div>
         </div>
         
         ${similarProducts.length > 0 ? `
@@ -152,49 +179,39 @@ function displayProduct(currentProduct, allProducts, container) {
         ` : ''}
     `;
     
-    
     container.appendChild(product);
-    
     
     initializeProductInteractions(currentProduct);
 }
 
-/**
- * 
- * @param {Object} currentProduct - The current product data
- */
 function initializeProductInteractions(currentProduct) {
-    // select product size
+    // choose product size
     const sizeOptions = document.querySelectorAll('.size-option');
-    const selectedSizeShown = document.querySelector('#selected-size');
+    const selectedSizeShown = document.getElementById('selected-size');
     
     if (sizeOptions.length > 0 && selectedSizeShown) {
-        
-        const defaultSize = currentProduct.options.find(opt => opt === 'Medium' || opt === 'M') || 
-                        currentProduct.options.find(opt => 
-                            ['Small', 'Medium', 'Large'].includes(opt)
-                        );
-        
         // medium is default
-        let selectedSize = defaultSize || 'M';
+        const defaultSize = currentProduct.options && currentProduct.options.find(opt => opt === 'Medium' || opt === 'M') || 
+                        currentProduct.options && currentProduct.options.find(opt => 
+                            ['Small', 'Medium', 'Large'].includes(opt)
+                        ) || 'Medium';
+        
+        let selectedSize = defaultSize;
         selectedSizeShown.textContent = selectedSize;
         
-        
         sizeOptions.forEach(option => {
-            
             if (option.getAttribute('data-size') === selectedSize) {
                 option.classList.add('selected');
             }
             
             option.addEventListener('click', function() {
-                
+                // remove selected
                 sizeOptions.forEach(opt => {
                     opt.classList.remove('selected');
                 });
                 
-                
+                // add selected
                 this.classList.add('selected');
-                
                 
                 selectedSize = this.getAttribute('data-size');
                 selectedSizeShown.textContent = selectedSize;
@@ -202,86 +219,85 @@ function initializeProductInteractions(currentProduct) {
         });
     }
     
-    // add to cart
+    // add to cart button
     const addToCartButton = document.querySelector('.add-to-cart');
     if (addToCartButton) {
         addToCartButton.addEventListener('click', function() {
+            // selected size
+            const selectedSizeElement = document.getElementById('selected-size');
+            const selectedSize = selectedSizeElement ? selectedSizeElement.textContent : 'Medium';
             
-            const selectedSize = document.getElementById('selected-size')?.textContent || 'Medium';
-            
-            
+            // milk option
             let milkOption = "Regular";
             const milkSelector = document.getElementById('milk-choice');
             if (milkSelector) {
                 milkOption = milkSelector.value;
             }
             
-            
+            // cart item
             const cartItem = {
                 id: currentProduct.id,
                 name: currentProduct.name,
                 price: currentProduct.price,
                 size: selectedSize,
                 milkOption: milkOption,
-                quantity: 1
+                quantity: 1,
+                image: currentProduct.image
             };
             
-            
+            // add item to cart
             addToCart(cartItem);
             
-            
+            // confirm with alert
             alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
-            
-            
-            
         });
     }
     
-    
-
+    // show product options
     const productOptions = document.querySelector(".product-options");
     const optionsArea = document.querySelector(".options-area");
     
-    // show product options
     if (productOptions && optionsArea) {
-        productOptions.onclick = function () {
+        productOptions.addEventListener('click', function() {
             optionsArea.classList.toggle("show");
-        };
+        });
     }
 }
 
-/**
- * 
- * @param {Object} item the item to add to cart
- */
 function addToCart(item) {
-    // get cart items
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // see if item exist in cart
-    const existingItemIndex = cart.findIndex(cartItem => 
-        cartItem.id === item.id && 
-        cartItem.size === item.size && 
-        cartItem.milkOption === item.milkOption
-    );
-    
-    if (existingItemIndex !== -1) {
+    try {
+        // find cart items
+        let cart = [];
+        const cartData = localStorage.getItem('cart');
         
-        cart[existingItemIndex].quantity += 1;
-    } else {
+        if (cartData) {
+            cart = JSON.parse(cartData);
+            if (!Array.isArray(cart)) {
+                cart = [];
+                console.error("Cart data is not an array, resetting");
+            }
+        }
         
-        cart.push(item);
+        // check if item is in cart
+        const existingItemIndex = cart.findIndex(cartItem => 
+            cartItem.id === item.id && 
+            cartItem.size === item.size && 
+            cartItem.milkOption === item.milkOption
+        );
+        
+        if (existingItemIndex !== -1) {
+            // increase quantity of same product
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // add new item
+            cart.push(item);
+        }
+    } catch (error) {
+        console.error("Error adding item to cart:", error);
+        alert("There was an error adding this item to your cart. Please try again.");
     }
-    
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-/**
- * 
- * @param {HTMLElement} container  the container element
- * @param {string} message the error message
- */
 function displayErrorMessage(container, message) {
     container.innerHTML = `
         <div class="error-message">
@@ -292,11 +308,10 @@ function displayErrorMessage(container, message) {
     `;
 }
 
-// some css code
+// CSS
 function addProductStyles() {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
-    
         .error-message {
             text-align: center;
             padding: 50px 20px;
@@ -311,7 +326,6 @@ function addProductStyles() {
             text-decoration: none;
             border-radius: 4px;
         }
-        
         @media (max-width: 768px) {
             .main-product {
                 flex-direction: column;
@@ -325,8 +339,52 @@ function addProductStyles() {
     document.head.appendChild(styleElement);
 }
 
-// load functions when page is loaded
+// footer
+const footerHTML = `
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>ChayGPT - The best coffee shop in Helwan.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../menu/menu.html">Menu</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../menu/menu.html">Order Now</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Refund Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://github.com/ADHAM-KHAIRY/chaygpt.github.io" target="_blank"> <img src="../../images/github-icon.png" alt="Github"> </a>
+                <a href="https://www.facebook.com/" target="_blank"> <img src="../../images/facebook-icon.png" alt="Facebook"> </a>
+                <a href="https://www.instagram.com/" target="_blank"> <img src="../../images/instagram-icon.png" alt="Instagram"> </a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright">© 2025 ChayGPT Coffee. All Rights Reserved.</p>
+`;
+
+// add footer after page load
 document.addEventListener('DOMContentLoaded', () => {
+    const footerElement = document.getElementById("footer");
+    if (footerElement) {
+        footerElement.innerHTML = footerHTML;
+    } else {
+        console.error("Footer element not found");
+    }
+    
+    // load page
     addProductStyles();
     getProductData();
 });

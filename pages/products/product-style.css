@@ -58,7 +58,7 @@ img {
     margin: 0 auto;
     padding: 0 5%;
 }
-/* Header Styling */
+
 header {
     background-color: var(--primary-color);
     color: var(--white);
@@ -92,7 +92,7 @@ nav {
 .brand-name {
     font-family: 'Rakkas', serif;
     margin-left: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--secondary-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
