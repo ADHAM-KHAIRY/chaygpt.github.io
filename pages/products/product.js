@@ -1,41 +1,28 @@
-// Toggle product options visibility
-const productOptions = document.querySelector(".product-options");
-const optionsArea = document.querySelector(".options-area");
 
-// Add event listener only if element exists
-if (productOptions && optionsArea) {
-    productOptions.onclick = function () {
-        optionsArea.classList.toggle("show");
-    };
-}
-
-// Get the current page filename to identify which product to display
 const fullPath = window.location.pathname;
 const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
 const baseName = fileName.split('.')[0];
 console.log("Base File Name:", baseName);
 
-/**
- * Main function to fetch and display product data
- */
+//get data from json file
 async function getProductData() {
     try {
-        // Load product data from JSON file
+        
         const response = await fetch('product.json');
         if (!response.ok) {
             throw new Error('Failed to fetch product data');
         }
         const data = await response.json();
-        const productData = data.products; // Access the products array
+        const productData = data.products;
         
-        // Get the product container element
+        
         const productContainer = document.querySelector(".product-page");
         if (!productContainer) {
             console.error("Product container not found");
             return;
         }
         
-        // Find the product that matches the current page
+        
         const currentProduct = productData.find(product => product.id === baseName);
         
         if (currentProduct) {
@@ -54,37 +41,37 @@ async function getProductData() {
 }
 
 /**
- * Display the product information on the page
+ * 
  * @param {Object} currentProduct - The current product data
- * @param {Array} allProducts - All products data
- * @param {HTMLElement} container - The container element
+ * @param {Array} allProducts  All products data
+ * @param {HTMLElement} container  container element
  */
 function displayProduct(currentProduct, allProducts, container) {
     // Create a product element
     const product = document.createElement("div");
     product.classList.add("product");
     
-    // Get similar products (excluding current product)
+    // find similar products
     const similarProducts = allProducts
         .filter(product => product.id !== currentProduct.id && 
                 (product.category === currentProduct.category || 
-                 Math.random() > 0.5)) // Fallback to random if no similar category exists
-        .slice(0, 3); // Limit to 3 similar products
+                Math.random() > 0.5)) 
+        .slice(0, 3);
     
-    // Format price to always show 2 decimal places
+    
     const formattedPrice = currentProduct.price.toFixed(2);
     
-    // Determine which size options to show
+    
     const sizeOptions = currentProduct.options.filter(option => 
-        ['Small', 'Medium', 'Large', 'XL', 'S', 'M', 'L'].includes(option)
+        ['Small', 'Medium', 'Large'].includes(option)
     );
     
-    // Determine if we have milk options
+    // milk option or no milk
     const milkOptions = currentProduct.options.filter(option => 
         ['Oat milk', 'Almond milk', 'Soy milk'].includes(option)
     );
     
-    // Populate the product element with HTML
+    // html code
     product.innerHTML = `
         <main class="product-area">
             <div class="main-product">
@@ -165,71 +152,71 @@ function displayProduct(currentProduct, allProducts, container) {
         ` : ''}
     `;
     
-    // Add the product element to the container
+    
     container.appendChild(product);
     
-    // Add event listeners and initialize product interactions
+    
     initializeProductInteractions(currentProduct);
 }
 
 /**
- * Set up event listeners and interactions for the product page
+ * 
  * @param {Object} currentProduct - The current product data
  */
 function initializeProductInteractions(currentProduct) {
-    // Set up size selection
+    // select product size
     const sizeOptions = document.querySelectorAll('.size-option');
     const selectedSizeShown = document.querySelector('#selected-size');
     
     if (sizeOptions.length > 0 && selectedSizeShown) {
-        // Find default size (Medium or first available)
+        
         const defaultSize = currentProduct.options.find(opt => opt === 'Medium' || opt === 'M') || 
                         currentProduct.options.find(opt => 
                             ['Small', 'Medium', 'Large'].includes(opt)
                         );
         
-        // Set default selected size
+        // medium is default
         let selectedSize = defaultSize || 'M';
         selectedSizeShown.textContent = selectedSize;
         
-        // Add click event listeners to each size option
+        
         sizeOptions.forEach(option => {
-            // Select default option
+            
             if (option.getAttribute('data-size') === selectedSize) {
                 option.classList.add('selected');
             }
             
             option.addEventListener('click', function() {
-                // Remove 'selected' class from all options
+                
                 sizeOptions.forEach(opt => {
                     opt.classList.remove('selected');
                 });
                 
-                // Add 'selected' class to clicked option
+                
                 this.classList.add('selected');
                 
-                // Update selected size text
+                
                 selectedSize = this.getAttribute('data-size');
                 selectedSizeShown.textContent = selectedSize;
             });
         });
     }
     
-    // Add to cart functionality
+    // add to cart
     const addToCartButton = document.querySelector('.add-to-cart');
     if (addToCartButton) {
         addToCartButton.addEventListener('click', function() {
-            // Get the currently selected size
+            
             const selectedSize = document.getElementById('selected-size')?.textContent || 'Medium';
             
-            // Get the selected milk option if available
+            
             let milkOption = "Regular";
             const milkSelector = document.getElementById('milk-choice');
             if (milkSelector) {
                 milkOption = milkSelector.value;
             }
             
-            // Create a cart item object
+            
             const cartItem = {
                 id: currentProduct.id,
                 name: currentProduct.name,
@@ -239,40 +226,39 @@ function initializeProductInteractions(currentProduct) {
                 quantity: 1
             };
             
-            // Add to cart in localStorage
+            
             addToCart(cartItem);
             
-            // Show confirmation
+            
             alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
             
-            // Update cart count in header if it exists
-            updateCartCount();
+            
+            
         });
     }
     
-    // Toggle options area visibility
-    const productOptionsToggle = document.querySelector('.product-options');
-    const optionsAreaElement = document.querySelector('.options-area');
     
-    if (productOptionsToggle && optionsAreaElement) {
-        // Show options by default
-        optionsAreaElement.classList.add('show');
-        
-        productOptionsToggle.addEventListener('click', function() {
-            optionsAreaElement.classList.toggle('show');
-        });
+
+    const productOptions = document.querySelector(".product-options");
+    const optionsArea = document.querySelector(".options-area");
+    
+    // show product options
+    if (productOptions && optionsArea) {
+        productOptions.onclick = function () {
+            optionsArea.classList.toggle("show");
+        };
     }
 }
 
 /**
- * Add item to cart in localStorage
- * @param {Object} item - The item to add to cart
+ * 
+ * @param {Object} item the item to add to cart
  */
 function addToCart(item) {
-    // Get existing cart from localStorage
+    // get cart items
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Check if item already exists in cart
+    // see if item exist in cart
     const existingItemIndex = cart.findIndex(cartItem => 
         cartItem.id === item.id && 
         cartItem.size === item.size && 
@@ -280,33 +266,21 @@ function addToCart(item) {
     );
     
     if (existingItemIndex !== -1) {
-        // Increment quantity if item already exists
+        
         cart[existingItemIndex].quantity += 1;
     } else {
-        // Add new item to cart
+        
         cart.push(item);
     }
     
-    // Save updated cart to localStorage
+    
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 /**
- * Update cart count in header
- */
-function updateCartCount() {
-    const cartCountElement = document.querySelector('.cart-count');
-    if (cartCountElement) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-        cartCountElement.textContent = totalItems;
-    }
-}
-
-/**
- * Display error message in product container
- * @param {HTMLElement} container - The container element
- * @param {string} message - The error message
+ * 
+ * @param {HTMLElement} container  the container element
+ * @param {string} message the error message
  */
 function displayErrorMessage(container, message) {
     container.innerHTML = `
@@ -318,9 +292,7 @@ function displayErrorMessage(container, message) {
     `;
 }
 
-/**
- * Add CSS styles for the product page
- */
+// some css code
 function addProductStyles() {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
@@ -353,7 +325,7 @@ function addProductStyles() {
     document.head.appendChild(styleElement);
 }
 
-// Initialize everything when the DOM is loaded
+// load functions when page is loaded
 document.addEventListener('DOMContentLoaded', () => {
     addProductStyles();
     getProductData();

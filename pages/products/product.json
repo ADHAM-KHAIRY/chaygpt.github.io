@@ -70,7 +70,7 @@
       },
       {
         "id": "lemon-tea",
-        "name": "Zesty Lemon Tea",
+        "name": "Lemon Tea",
         "description": "Black tea infused with fresh lemon, offering a citrusy twist to a classic favorite.",
         "price": 3.25,
         "ingredients": ["Black tea leaves", "Fresh lemon slices", "Filtered water", "Optional honey"],
