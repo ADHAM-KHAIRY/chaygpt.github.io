@@ -34,7 +34,7 @@ const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
 const baseName = fileName.split('.')[0];
 console.log("Base File Name:", baseName);
 
-//get data from json file
+//get data from json file.
 async function getProductData() {
     try {
         const response = await fetch('product.json');
