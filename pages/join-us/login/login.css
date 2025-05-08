@@ -10,7 +10,9 @@
   --google-color: #db4437;
   --facebook-color: #3b5998;
 }
-
+body{
+  background-color: var(--light-bg);
+}
 .auth-container {
   max-width: 500px;
   margin: 2rem auto 4rem;
