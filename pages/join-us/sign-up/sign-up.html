@@ -17,7 +17,7 @@
                 <h2>Create an Account</h2>
                 <p class="auth-subtitle">Join ChayGPT and enjoy premium tea & coffee</p>
                 
-                <form class="auth-form">
+                <form class="auth-form" action="../login/login.html">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="first-name">First Name</label>
@@ -36,18 +36,19 @@
                     
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Create a password" required>
+                        <input type="password" id="password" placeholder="Create a password" required minlength="8">
                         <small class="password-hint">Password must be at least 8 characters with letters and numbers</small>
                     </div>
-                    
+                    <div id="error1-message" style="color: red; margin: 10px 0;"></div>
                     <div class="form-group">
                         <label for="confirm-password">Confirm Password</label>
                         <input type="password" id="confirm-password" placeholder="Confirm your password" required>
                     </div>
+                    <div id="error2-message" style="color: red; margin: 10px 0;"></div>
                     
                     <div class="terms-check">
                         <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="../legal/terms.html">Terms of Service</a> and <a href="../legal/privacy.html">Privacy Policy</a></label>
+                        <label for="terms">I agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a></label>
                     </div>
                     
                     <button type="submit" class="auth-button">Create Account</button>
