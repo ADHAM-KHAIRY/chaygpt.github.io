@@ -1,71 +1,87 @@
-let first =document.getElementById("first-name");
-window.onload = function (){
-    first.focus();
-}
+window.onload = function() {
+  const firstNameInput = document.getElementById("first-name");
+      firstNameInput.focus();
+};
 function validPassword(password) {
-    const hasNumber = /[0-9]/.test(password);
-    const hasUpperCase = /[A-Z]/.test(password);
-    
-    if (hasNumber && hasUpperCase) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    const passwordInput = document.getElementById('password');
-    const submitButton = document.getElementById('submit');
-    const errorMessage = document.getElementById('error1-message');
-    
-    passwordInput.addEventListener('input', function() {
+  const hasNumber = /[0-9]/.test(password);
+  const hasUpperCase = /[A-Z]/.test(password);
+  
+  return hasNumber && hasUpperCase;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirm-password');
+  const submitButton = document.getElementById('submit');
+  const passwordErrorMessage = document.getElementById('error1-message');
+  const confirmErrorMessage = document.getElementById('error2-message');
+  const form = document.querySelector('form');
+  
+  let isPasswordValid = false;
+  let doPasswordsMatch = false;
+
+  passwordInput.addEventListener('input', function() {
       const password = passwordInput.value;
       
-      if (validPassword(password)) {
-        errorMessage.textContent = 'The password is valid.✅';
-        errorMessage.style.color = 'green';
-        submitButton.disabled = false;
+      isPasswordValid = validPassword(password);
       
+      if (isPasswordValid) {
+          passwordErrorMessage.textContent = 'The password is valid.✅';
+          passwordErrorMessage.style.color = 'green';
       } else {
-        errorMessage.textContent = 'password must contain at least one number and at least one capital letter.';
-        errorMessage.style.color = 'red';
-        submitButton.disabled = true;
+          passwordErrorMessage.textContent = 'Password must contain at least one number and at least one capital letter.';
+          passwordErrorMessage.style.color = 'red';
       }
-    });
+      
+      checkPasswordsMatch();
+      updateSubmitButton();
   });
   
-  document.addEventListener('DOMContentLoaded', function() {
-    const field1 = document.getElementById('password');
-    const field2 = document.getElementById('confirm-password');
-    const errorMessage = document.getElementById('error2-message');
-    const submitButton = document.getElementById('submit');
-    
-    function checkFieldsMatch(field1Value, field2Value) {
-      return field1Value === field2Value;
-    }
-    
-    function validFields() {
-      const field1Value = field1.value;
-      const field2Value = field2.value;
-      
-      if (field1Value && field2Value) {
-        if (checkFieldsMatch(field1Value, field2Value)) {
-          errorMessage.textContent = 'The fields match.✅';
-          errorMessage.style.color = 'green';
-          submitButton.disabled = false;
-        } else {
-          errorMessage.textContent = 'Failed! Fields do not match.❌';
-          errorMessage.style.color = 'red';
-          submitButton.disabled = true;
-        }
-      } else {
-        errorMessage.textContent = 'Please fill in both fields';
-        errorMessage.style.color = 'orange';
-        submitButton.disabled = true;
-      }
-    }
-    
-    field1.addEventListener('input', validFields);
-    field2.addEventListener('input', validFields);
-    
-    validFields();
+  confirmPasswordInput.addEventListener('input', function() {
+      checkPasswordsMatch();
+      updateSubmitButton();
   });
+  
+  function checkPasswordsMatch() {
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+      
+      if (confirmPassword) {
+          doPasswordsMatch = (password === confirmPassword);
+          
+          if (doPasswordsMatch) {
+              confirmErrorMessage.textContent = 'The fields match.✅';
+              confirmErrorMessage.style.color = 'green';
+          } else {
+              confirmErrorMessage.textContent = 'Failed! Fields do not match.❌';
+              confirmErrorMessage.style.color = 'red';
+          }
+      } else {
+          confirmErrorMessage.textContent = 'Please confirm your password';
+          confirmErrorMessage.style.color = 'orange';
+          doPasswordsMatch = false;
+      }
+  }
+  
+  function updateSubmitButton() {
+      submitButton.disabled = !(isPasswordValid && doPasswordsMatch);
+  }
+  
+  if (form) {
+      form.addEventListener('submit', function(event) {
+          if (!(isPasswordValid && doPasswordsMatch)) {
+              event.preventDefault(); 
+              
+              if (!isPasswordValid) {
+                  passwordErrorMessage.textContent = 'Please enter a valid password with numbers and uppercase letters.';
+                  passwordErrorMessage.style.color = 'red';
+              }
+              
+              if (!doPasswordsMatch) {
+                  confirmErrorMessage.textContent = 'Password fields must match!';
+                  confirmErrorMessage.style.color = 'red';
+              }
+          }
+      });
+  }
+});
