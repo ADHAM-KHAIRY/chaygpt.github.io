@@ -191,7 +191,6 @@ h3 {
     color: var(--primary);
     margin-top: 0.5rem;
 }
-/* Category boxes */
 .category-box {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -213,7 +212,7 @@ h3 {
     gap: 1.5rem;
 }
 
-/* Product cards - keep your existing styles */
+
 .product-card {
     background: var(--light-bg);
     border-radius: var(--border-radius);
@@ -300,9 +299,9 @@ h3 {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Add this to your existing CSS */
+/*link to pages*/
 .product-card {
-    display: block; /* Change to block for anchor tags */
+    display: block; 
     text-decoration: none;
     color: inherit;
     background: var(--light-bg);
@@ -311,9 +310,8 @@ h3 {
     transition: var(--transition);
 }
 
-/* Rest of your existing product card styles remain the same */
 
-/* for error handling */
+
 .error-message {
     text-align: center;
     grid-column: 1 / -1;
