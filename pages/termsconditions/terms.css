@@ -1,12 +1,15 @@
-body{
-    margin-top:0px;
-}
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: #d8e0cc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}       
 
 .topline {
-    font-family: 'Rakkas', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem ;
-    color:#4a563a;
+    color:#333;
     margin-left: 20px;
     
 }
@@ -32,9 +35,10 @@ li {
     list-style: none;
 }
 
-body {
-    font-family: 'Cairo', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color:#d8e0cc ;
+
+
+.website-link{
+    color: #4a563a;
+    text-decoration: underline;
 }
+
