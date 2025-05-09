@@ -4,6 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* :root {
+    --primary-color: #5b3e29;
+    --secondary-color: #e6c9a8;
+    --dark-primary: #422b1e;
+    --text-color: #333;
+    --light-bg: #f9f5f0;
+    --white: #fff;
+} */
 :root {
     --primary-color: #50613b;
     --secondary-color: #d8e0cc;
@@ -108,10 +116,15 @@ nav {
     transition: width 0.3s ease;
 }
 
-.nav-item a:hover::after {
+.links a:hover:after {
     width: 100%;
 }
-
+.nav-links .active a {     
+    font-weight: bold;
+}
+.nav-links .active a::after {     
+    width: 100%;
+}
 /* Main */
 .main {
     flex: 1;
