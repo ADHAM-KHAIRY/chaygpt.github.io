@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const menuContainer = document.getElementById('menu-container');
             menuContainer.innerHTML = '';
 
-            // Group products by category
             const categories = {};
             products.forEach(product => {
                 if (!categories[product.category]) {
@@ -15,26 +14,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 categories[product.category].push(product);
             });
 
-            // Create sections for each category
+
             for (const [category, items] of Object.entries(categories)) {
-                // Create category box
                 const categoryBox = document.createElement('div');
                 categoryBox.className = 'category-box';
                 
-                // Add category title
                 const categoryTitle = document.createElement('h2');
                 categoryTitle.className = 'category-title';
                 categoryTitle.textContent = category;
                 categoryBox.appendChild(categoryTitle);
                 
-                // Create grid for products in this category
                 const productsGrid = document.createElement('div');
                 productsGrid.className = 'products-grid';
                 
-                // Add products to the grid
                 items.forEach(product => {
-                    const productCard = document.createElement('div');
+                    const productCard = document.createElement('a');
                     productCard.className = 'product-card';
+                    
+                    const imageName = product.image.split('.')[0]; 
+                    productCard.href = `../products/${imageName}.html`;
                     
                     const imagePath = `../../images/products/${product.image}`;
                     
