@@ -1,0 +1,40 @@
+body{
+    margin-top:0px;
+}
+
+.topline {
+    font-family: 'Rakkas', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem ;
+    color:#4a563a;
+    margin-left: 20px;
+    
+}
+
+p { 
+    margin-left: 80px;
+    padding: 0px ;
+    color: #4a563a;
+    --primary-color: #5b3e29;
+    --secondary-color: #e6c9a8;
+    --dark-primary: #422b1e;
+    --text-color: #333;
+    --light-bg: #f9f5f0;
+    --white: #fff;
+}
+
+h3{
+    margin-left: 50px; ;
+    margin-top: 8px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color:#d8e0cc ;
+}
