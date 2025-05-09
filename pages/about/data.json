@@ -9,7 +9,7 @@
     {
     "github": "hamzaShiba7", 
     "name": "Hamza",
-    "pages": "Productes template",
+    "pages": "Products template",
     "skills": ["C", "Git", "CSS", "HTML","javascript","Linux"],
     "image": "../../images/hamza.jpg"
     },
@@ -23,14 +23,14 @@
     {
     "github": "Amir23-qs", 
     "name": "Amir",
-    "pages": "Not yet",
+    "pages": "Chatbot Page",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/amir.jpg"
     },
     {
     "github": "hazem-top", 
     "name": "Hazem",
-    "pages": "Not yet",
+    "pages": "Legal Page",
     "skills": ["C", "CSS", "HTML"],
     "image": "../../images/hazem.jpg"
     },
