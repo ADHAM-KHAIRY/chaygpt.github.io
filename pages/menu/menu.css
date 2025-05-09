@@ -1,32 +1,32 @@
-/* Base Styles */
-:root {
-    --primary: #50613b;
-    --primary-dark: #4a563a;
-    --secondary: #d8e0cc;
-    --text: #333;
-    --light-bg: #f9f5f0;
-    --white: #fff;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --border-radius: 0.5rem;
-}
-
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* :root {
+    --primary-color: #5b3e29;
+    --secondary-color: #e6c9a8;
+    --dark-primary: #422b1e;
+    --text-color: #333;
+    --light-bg: #f9f5f0;
+    --white: #fff;
+} */
+:root {
+    --primary-color: #50613b;
+    --secondary-color: #d8e0cc;
+    --dark-primary: #4a563a;
+    --text-color: #333;
+    --light-bg: #f9f5f0;
+    --white: #fff;
+}
 
 body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
-    color: var(--text);
+    color: var(--text-color);
     background-color: var(--light-bg);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
-
 a {
     text-decoration: none;
     color: inherit;
@@ -41,100 +41,90 @@ img {
     height: auto;
     display: block;
 }
-
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 5%;
 }
-
-/* Typography */
-h1,
-h2,
-h3 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.brand-name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    color: var(--secondary);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Header & Nav */
-.header {
-    background-color: var(--primary);
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
     color: var(--white);
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
     border-radius: 0 0 50px 50px;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo-container {
+nav {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo {
+.main-logo img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--secondary);
-    transition: var(--transition);
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+.main-logo img:hover {
+    transform: translatey(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.brand-name {
+    font-family: 'Rakkas', serif;
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.logo:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-.nav-list {
+.nav-links {
     display: flex;
-    gap: 2rem;
+    margin-left: auto;
 }
 
-.nav-item {
+.links {
+    margin-left: 2rem;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    position: relative;
+    transition: all 0.3s ease;
 }
 
-.nav-item a {
+.links a {
+    position: relative;
     padding: 0.5rem;
     color: var(--white);
 }
 
-.nav-item a::after {
+.links a:after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--secondary);
-    transition: var(--transition);
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
-.nav-item a:hover::after {
+.links a:hover:after {
     width: 100%;
 }
-
+.nav-links .active a {     
+    font-weight: bold;
+}
+.nav-links .active a::after {     
+    width: 100%;
+}
 /* Main */
 .main {
     flex: 1;
@@ -191,7 +181,6 @@ h3 {
     color: var(--primary);
     margin-top: 0.5rem;
 }
-/* Category boxes */
 .category-box {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -213,7 +202,7 @@ h3 {
     gap: 1.5rem;
 }
 
-/* Product cards - keep your existing styles */
+
 .product-card {
     background: var(--light-bg);
     border-radius: var(--border-radius);
@@ -300,9 +289,9 @@ h3 {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Add this to your existing CSS */
+/*link to pages*/
 .product-card {
-    display: block; /* Change to block for anchor tags */
+    display: block; 
     text-decoration: none;
     color: inherit;
     background: var(--light-bg);
@@ -311,9 +300,8 @@ h3 {
     transition: var(--transition);
 }
 
-/* Rest of your existing product card styles remain the same */
 
-/* for error handling */
+
 .error-message {
     text-align: center;
     grid-column: 1 / -1;

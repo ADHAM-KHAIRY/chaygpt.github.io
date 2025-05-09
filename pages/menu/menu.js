@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const menuContainer = document.getElementById('menu-container');
             menuContainer.innerHTML = '';
 
-            // Group products by category
             const categories = {};
             products.forEach(product => {
                 if (!categories[product.category]) {
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 categories[product.category].push(product);
             });
 
-            // Create sections for each category
+
             for (const [category, items] of Object.entries(categories)) {
                 const categoryBox = document.createElement('div');
                 categoryBox.className = 'category-box';
@@ -29,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 productsGrid.className = 'products-grid';
                 
                 items.forEach(product => {
-                    const productCard = document.createElement('a'); // Changed to <a> tag
+                    const productCard = document.createElement('a');
                     productCard.className = 'product-card';
-                    // Set href to the product page path
-                    const imageName = product.image.split('.')[0]; // Remove .jpg extension
+                    
+                    const imageName = product.image.split('.')[0]; 
                     productCard.href = `../products/${imageName}.html`;
                     
                     const imagePath = `../../images/products/${product.image}`;
