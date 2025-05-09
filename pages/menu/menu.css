@@ -4,14 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* :root {
-    --primary-color: #5b3e29;
-    --secondary-color: #e6c9a8;
-    --dark-primary: #422b1e;
-    --text-color: #333;
-    --light-bg: #f9f5f0;
-    --white: #fff;
-} */
 :root {
     --primary-color: #50613b;
     --secondary-color: #d8e0cc;
@@ -116,15 +108,10 @@ nav {
     transition: width 0.3s ease;
 }
 
-.links a:hover:after {
+.nav-item a:hover::after {
     width: 100%;
 }
-.nav-links .active a {     
-    font-weight: bold;
-}
-.nav-links .active a::after {     
-    width: 100%;
-}
+
 /* Main */
 .main {
     flex: 1;
@@ -181,6 +168,7 @@ nav {
     color: var(--primary);
     margin-top: 0.5rem;
 }
+/* Category boxes */
 .category-box {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -202,7 +190,7 @@ nav {
     gap: 1.5rem;
 }
 
-
+/* Product cards - keep your existing styles */
 .product-card {
     background: var(--light-bg);
     border-radius: var(--border-radius);

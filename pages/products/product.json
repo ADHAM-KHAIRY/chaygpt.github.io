@@ -172,7 +172,7 @@
       },
       {
         "id": "hot-chocolate",
-        "name": "Decadent Hot Chocolate",
+        "name": "Hot Chocolate",
         "description": "Rich, velvety hot chocolate made with premium cocoa and steamed milk.",
         "price": 4.50,
         "ingredients": ["Premium cocoa powder", "Milk", "Sugar", "Vanilla extract"],
@@ -189,7 +189,7 @@
       },
       {
         "id": "cinnamon",
-        "name": "Cinnamon Comfort",
+        "name": "Cinnamon",
         "description": "Warming cinnamon infusion, perfect for cold days and soothing relaxation.",
         "price": 3.50,
         "ingredients": ["Cinnamon sticks", "Filtered water", "Optional honey"],
@@ -223,7 +223,7 @@
       },
       {
         "id": "latte",
-        "name": "Silky Latte",
+        "name": "Latte",
         "description": "Espresso shot topped with velvety steamed milk, creating a perfect balance of coffee and creaminess.",
         "price": 4.50,
         "ingredients": ["Espresso", "Steamed milk", "Optional flavor syrup"],
@@ -257,7 +257,7 @@
       },
       {
         "id": "espresso",
-        "name": "Robust Espresso",
+        "name": "Espresso",
         "description": "Concentrated coffee served in a small shot, the pure essence of our premium beans.",
         "price": 2.75,
         "ingredients": ["Finely ground coffee beans", "Filtered water"],
@@ -274,7 +274,7 @@
       },
       {
         "id": "mocha",
-        "name": "Indulgent Mocha",
+        "name": "Mocha",
         "description": "The perfect marriage of espresso, chocolate, and steamed milk topped with whipped cream.",
         "price": 4.95,
         "ingredients": ["Espresso", "Chocolate syrup", "Steamed milk", "Whipped cream"],
@@ -291,7 +291,7 @@
       },
       {
         "id": "flat-white",
-        "name": "Velvety Flat White",
+        "name": "Flat White",
         "description": "Espresso with microfoam steamed milk, creating a smooth, rich coffee experience.",
         "price": 4.50,
         "ingredients": ["Espresso", "Microfoam steamed milk"],
@@ -325,7 +325,7 @@
       },
       {
         "id": "matcha",
-        "name": "Ceremonial Matcha",
+        "name": "Matcha",
         "description": "Traditional Japanese green tea powder whisked to frothy perfection, rich in antioxidants.",
         "price": 5.25,
         "ingredients": ["Premium matcha powder", "Hot water", "Optional milk"],
@@ -342,7 +342,7 @@
       },
       {
         "id": "ice-coffee",
-        "name": "Refreshing Iced Coffee",
+        "name": "Iced Coffee",
         "description": "Cold-brewed coffee served over ice for a smooth, less acidic coffee experience.",
         "price": 4.25,
         "ingredients": ["Cold brew coffee", "Ice", "Optional milk", "Optional syrup"],
@@ -359,7 +359,7 @@
       },
       {
         "id": "mango-juice",
-        "name": "Pure Mango Juice",
+        "name": "Mango Juice",
         "description": "Freshly squeezed sweet mangoes, rich in tropical flavor and natural goodness.",
         "price": 4.95,
         "ingredients": ["Fresh mangoes", "Ice", "Optional mint garnish"],
@@ -376,7 +376,7 @@
       },
       {
         "id": "orange-juice",
-        "name": "Fresh-Squeezed Orange Juice",
+        "name": "Orange Juice",
         "description": "Vibrant juice from freshly squeezed oranges, packed with vitamin C.",
         "price": 4.50,
         "ingredients": ["Fresh oranges", "Ice", "Optional pulp"],
@@ -393,7 +393,7 @@
       },
       {
         "id": "lemon-juice",
-        "name": "Zesty Lemonade",
+        "name": "Lemonade",
         "description": "Tangy fresh-squeezed lemons balanced with just the right amount of sweetness.",
         "price": 3.95,
         "ingredients": ["Fresh lemons", "Sugar syrup", "Water", "Ice", "Optional mint garnish"],
@@ -410,8 +410,8 @@
       },
       {
         "id": "mint-lemon-juice",
-        "name": "Refreshing Mint Lemonade",
-        "description": "Our zesty lemonade infused with fresh mint leaves for an extra refreshing twist.",
+        "name": "Mint Lemonade",
+        "description": "Our lemonade infused with fresh mint leaves for an extra refreshing twist.",
         "price": 4.25,
         "ingredients": ["Fresh lemons", "Fresh mint leaves", "Sugar syrup", "Water", "Ice"],
         "options": ["Small", "Medium", "Large", "Extra mint", "Less sweet"],
@@ -427,7 +427,7 @@
       },
       {
         "id": "strawberry-juice",
-        "name": "Sweet Strawberry Juice",
+        "name": "Strawberry Juice",
         "description": "Blended fresh strawberries creating a naturally sweet and vibrant refreshment.",
         "price": 4.95,
         "ingredients": ["Fresh strawberries", "Optional sugar", "Water", "Ice"],
@@ -444,7 +444,7 @@
       },
       {
         "id": "melon-juice",
-        "name": "Honeydew Melon Juice",
+        "name": "Melon Juice",
         "description": "Delicately sweet juice from perfectly ripened honeydew melons, naturally refreshing.",
         "price": 4.75,
         "ingredients": ["Fresh honeydew melon", "Ice", "Optional mint garnish"],
@@ -461,7 +461,7 @@
       },
       {
         "id": "watermelon-juice",
-        "name": "Hydrating Watermelon Juice",
+        "name": "Watermelon Juice",
         "description": "Naturally sweet and hydrating juice pressed from fresh watermelon, summer in a glass.",
         "price": 4.50,
         "ingredients": ["Fresh watermelon", "Ice", "Optional mint garnish"],
