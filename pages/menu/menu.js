@@ -17,24 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Create sections for each category
             for (const [category, items] of Object.entries(categories)) {
-                // Create category box
                 const categoryBox = document.createElement('div');
                 categoryBox.className = 'category-box';
                 
-                // Add category title
                 const categoryTitle = document.createElement('h2');
                 categoryTitle.className = 'category-title';
                 categoryTitle.textContent = category;
                 categoryBox.appendChild(categoryTitle);
                 
-                // Create grid for products in this category
                 const productsGrid = document.createElement('div');
                 productsGrid.className = 'products-grid';
                 
-                // Add products to the grid
                 items.forEach(product => {
-                    const productCard = document.createElement('div');
+                    const productCard = document.createElement('a'); // Changed to <a> tag
                     productCard.className = 'product-card';
+                    // Set href to the product page path
+                    const imageName = product.image.split('.')[0]; // Remove .jpg extension
+                    productCard.href = `../products/${imageName}.html`;
                     
                     const imagePath = `../../images/products/${product.image}`;
                     

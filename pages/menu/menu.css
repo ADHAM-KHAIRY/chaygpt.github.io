@@ -300,6 +300,18 @@ h3 {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Add this to your existing CSS */
+.product-card {
+    display: block; /* Change to block for anchor tags */
+    text-decoration: none;
+    color: inherit;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+/* Rest of your existing product card styles remain the same */
 
 /* for error handling */
 .error-message {
