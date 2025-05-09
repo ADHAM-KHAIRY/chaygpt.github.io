@@ -190,6 +190,66 @@ h3 {
     color: var(--primary);
     margin-top: 0.5rem;
 }
+/* Category boxes */
+.category-box {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.category-title {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Product cards - keep your existing styles */
+.product-card {
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.product-name {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.product-desc {
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+
 
 /* Footer */
 .footer {
@@ -238,4 +298,13 @@ h3 {
     text-align: center;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* for error handling */
+.error-message {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #d32f2f;
+    padding: 2rem;
+    font-size: 1.2rem;
 }
