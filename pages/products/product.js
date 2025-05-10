@@ -103,7 +103,7 @@ function displayProduct(currentProduct, allProducts, container) {
                     <h2 class="product-name">${currentProduct.name}</h2>
                     <br>
                     <p class="product-description">${currentProduct.description}</p>
-                    <p class="product-price">$${formattedPrice}</p>
+                    <p class="product-price">${formattedPrice}EGP</p>
                     <br>
                     ${currentProduct.allergens && currentProduct.allergens.length > 0 ? 
                         `<p class="allergens">Allergens: ${currentProduct.allergens.join(', ')}</p>` : 
