@@ -1,17 +1,13 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Oswald&family=Rakkas&display=swap');
+
 /* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* :root {
-    --primary-color: #5b3e29;
-    --secondary-color: #e6c9a8;
-    --dark-primary: #422b1e;
-    --text-color: #333;
-    --light-bg: #f9f5f0;
-    --white: #fff;
-} */
+
 :root {
     --primary-color: #50613b;
     --secondary-color: #d8e0cc;
@@ -19,6 +15,15 @@
     --text-color: #333;
     --light-bg: #f9f5f0;
     --white: #fff;
+
+    /* Added missing variables */
+    --primary-dark: #4a563a;
+    --primary: #50613b;
+    --secondary: #d8e0cc;
+    --border-radius: 10px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --text: #333;
 }
 
 body {
@@ -27,6 +32,7 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -41,11 +47,13 @@ img {
     height: auto;
     display: block;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
 }
+
 /* Header Styling */
 header {
     background-color: var(--primary-color);
@@ -71,12 +79,14 @@ nav {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--secondary-color);
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
+
 .main-logo img:hover {
-    transform: translatey(-3px);
+    transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .brand-name {
     font-family: 'Rakkas', serif;
     margin-left: 1rem;
@@ -96,7 +106,7 @@ nav {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .links a {
@@ -119,12 +129,15 @@ nav {
 .links a:hover:after {
     width: 100%;
 }
-.nav-links .active a {     
+
+.nav-links .active a {
     font-weight: bold;
 }
-.nav-links .active a::after {     
+
+.nav-links .active a::after {
     width: 100%;
 }
+
 /* Main */
 .main {
     flex: 1;
@@ -181,6 +194,7 @@ nav {
     color: var(--primary);
     margin-top: 0.5rem;
 }
+
 /* Category boxes */
 .category-box {
     margin-bottom: 3rem;
@@ -203,8 +217,11 @@ nav {
     gap: 1.5rem;
 }
 
-/* Product cards - keep your existing styles */
+/* Product cards */
 .product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: var(--light-bg);
     border-radius: var(--border-radius);
     padding: 1rem;
@@ -213,7 +230,7 @@ nav {
 
 .product-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-img {
@@ -239,8 +256,6 @@ nav {
     font-weight: bold;
     color: var(--primary);
 }
-
-
 
 /* Footer */
 .footer {
@@ -290,19 +305,8 @@ nav {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/*link to pages*/
-.product-card {
-    display: block; 
-    text-decoration: none;
-    color: inherit;
-    background: var(--light-bg);
-    border-radius: var(--border-radius);
-    padding: 1rem;
-    transition: var(--transition);
-}
 
-
-
+/* Error Message */
 .error-message {
     text-align: center;
     grid-column: 1 / -1;
