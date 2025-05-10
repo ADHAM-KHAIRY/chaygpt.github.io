@@ -103,3 +103,53 @@
     .titles-h2{
         margin-left: 50px;
     }
+    footer {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 3rem 5%;
+    }
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .footer-section h3 {
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .footer-section h3:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: var(--secondary-color);
+        bottom: -5px;
+        left: 0;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .footer-section ul li:hover {
+        transform: translateX(3px);
+    }
+    
+    .footer-section a {
+        opacity: 0.8;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+        opacity: 1;
+    }
+    
