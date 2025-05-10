@@ -278,7 +278,7 @@ function displayErrorMessage(container, message) {
     `;
 }
 
-// CSS
+// css.
 function addProductStyles() {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
