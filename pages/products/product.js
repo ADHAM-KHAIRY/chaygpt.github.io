@@ -358,9 +358,9 @@ const footerHTML = `
         <div class="footer-section">
             <h3>Legal</h3>
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Refund Policy</a></li>
+                    <li><a href="../legal/privacy-policy/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../legal/terms-of-service/terms.html">Terms of Service</a></li>
+                    <li><a href="../legal/refund-policy/refund.html">Refund Policy</a></li>
             </ul>
         </div>
         <div class="footer-section">
