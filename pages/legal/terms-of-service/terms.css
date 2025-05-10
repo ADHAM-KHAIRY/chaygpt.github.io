@@ -7,6 +7,82 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }       
+    
+.header {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 50px 50px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-item a {
+    padding: 0.5rem;
+    color: var(--white);
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: var(--transition);
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
 .topline {
     color:#333;
