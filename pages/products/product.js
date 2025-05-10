@@ -1,11 +1,12 @@
 // header
 
-const headerHTML = `<header>
+const headerHTML = 
+`<header>
     <nav>
         <div class="main-logo">
             <a href="../../index.html"><img src="../../images/chay-gpt-logo.jpg" alt="ChayGPT Logo"></a>
         </div>
-        <h1 class="brand-name">ChayGPT</h1>
+        <a href="../../index.html"><h1 class="brand-name">ChayGPT</h1></a>
         <ul class="nav-links">
             <li class="links"><a href="../../index.html">Home</a></li>
             <li class="links"><a href="../../pages/about/about.html">About</a></li>
@@ -18,23 +19,19 @@ const headerHTML = `<header>
     </nav>
 </header>`;
 
-// wait for DOM to load
+// load heaader
 document.addEventListener('DOMContentLoaded', () => {
     const headerElement = document.getElementById("header");
-    if (headerElement) {
-        headerElement.innerHTML = headerHTML;
-    } else {
-        console.error("Header element not found");
-    }
+    headerElement.innerHTML = headerHTML;
 });
 
-// page name
+
 const fullPath = window.location.pathname;
 const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
 const baseName = fileName.split('.')[0];
 console.log("Base File Name:", baseName);
 
-//get data from json file.
+//get el data
 async function getProductData() {
     try {
         const response = await fetch('product.json');
@@ -45,11 +42,6 @@ async function getProductData() {
         const productData = data.products;
         
         const productContainer = document.querySelector(".product-page");
-        if (!productContainer) {
-            console.error("Product container not found");
-            return;
-        }
-        
         const currentProduct = productData.find(product => product.id === baseName);
         
         if (currentProduct) {
@@ -68,31 +60,22 @@ async function getProductData() {
 }
 
 function displayProduct(currentProduct, allProducts, container) {
-    // remove content
-    container.innerHTML = '';
     
-    // create product element
     const product = document.createElement("div");
     product.classList.add("product");
     
-    // similar products
+
     const similarProducts = allProducts
         .filter(product => product.id !== currentProduct.id && 
-                (product.category === currentProduct.category || 
-                Math.random() > 0.5)) 
-        .slice(0, 3);
+            (product.category === currentProduct.category )).slice(0, 3);
     
     const formattedPrice = currentProduct.price.toFixed(2);
-    
-    // Filter size options
+
     const sizeOptions = currentProduct.options ? currentProduct.options.filter(option => 
-        ['Small', 'Medium', 'Large'].includes(option)
-    ) : [];
+        ['Small', 'Medium', 'Large'].includes(option)) : [];
     
-    // Filter milk options
     const milkOptions = currentProduct.options ? currentProduct.options.filter(option => 
-        ['Oat milk', 'Almond milk', 'Soy milk'].includes(option)
-    ) : [];
+        ['Oat milk', 'Almond milk', 'Soy milk'].includes(option)) : [];
     
     // Create HTML content
     product.innerHTML = `
@@ -103,7 +86,7 @@ function displayProduct(currentProduct, allProducts, container) {
                     <h2 class="product-name">${currentProduct.name}</h2>
                     <br>
                     <p class="product-description">${currentProduct.description}</p>
-                    <p class="product-price">$${formattedPrice}</p>
+                    <p class="product-price">${formattedPrice}EGP</p>
                     <br>
                     ${currentProduct.allergens && currentProduct.allergens.length > 0 ? 
                         `<p class="allergens">Allergens: ${currentProduct.allergens.join(', ')}</p>` : 
@@ -136,15 +119,15 @@ function displayProduct(currentProduct, allProducts, container) {
                 </div>
             ` : ''}
             
-            <button class="add-to-cart">Add to Cart - $${formattedPrice}</button>
+            <button class="add-to-cart">Add to Cart - ${formattedPrice}EGP</button>
         </div>
         <div class="product-info">
             <div class="ingredients-section">
                 <h2 class="section-title">Ingredients</h2>
                 <ul class="ingredients-list">
                     ${currentProduct.ingredients && currentProduct.ingredients.length > 0 ? 
-                      currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('') :
-                      '<li>No ingredients listed</li>'}
+                    currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('') :
+                    '<li>No ingredients listed</li>'}
                 </ul>
             </div>
             <div class="nutritional-info">
@@ -185,16 +168,13 @@ function displayProduct(currentProduct, allProducts, container) {
 }
 
 function initializeProductInteractions(currentProduct) {
-    // choose product size
+    
     const sizeOptions = document.querySelectorAll('.size-option');
     const selectedSizeShown = document.getElementById('selected-size');
     
     if (sizeOptions.length > 0 && selectedSizeShown) {
-        // medium is default
-        const defaultSize = currentProduct.options && currentProduct.options.find(opt => opt === 'Medium' || opt === 'M') || 
-                        currentProduct.options && currentProduct.options.find(opt => 
-                            ['Small', 'Medium', 'Large'].includes(opt)
-                        ) || 'Medium';
+        
+        const defaultSize = currentProduct.options && currentProduct.options.find(opt => opt === 'Medium' ) || 'Medium';
         
         let selectedSize = defaultSize;
         selectedSizeShown.textContent = selectedSize;
@@ -219,41 +199,24 @@ function initializeProductInteractions(currentProduct) {
         });
     }
     
-    // add to cart button
+
     const addToCartButton = document.querySelector('.add-to-cart');
     if (addToCartButton) {
         addToCartButton.addEventListener('click', function() {
-            // selected size
+            
             const selectedSizeElement = document.getElementById('selected-size');
             const selectedSize = selectedSizeElement ? selectedSizeElement.textContent : 'Medium';
             
-            // milk option
             let milkOption = "Regular";
             const milkSelector = document.getElementById('milk-choice');
             if (milkSelector) {
                 milkOption = milkSelector.value;
             }
             
-            // cart item
-            const cartItem = {
-                id: currentProduct.id,
-                name: currentProduct.name,
-                price: currentProduct.price,
-                size: selectedSize,
-                milkOption: milkOption,
-                quantity: 1,
-                image: currentProduct.image
-            };
-            
-            // add item to cart
-            addToCart(cartItem);
-            
-            // confirm with alert
             alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
         });
     }
     
-    // show product options
     const productOptions = document.querySelector(".product-options");
     const optionsArea = document.querySelector(".options-area");
     
@@ -261,40 +224,6 @@ function initializeProductInteractions(currentProduct) {
         productOptions.addEventListener('click', function() {
             optionsArea.classList.toggle("show");
         });
-    }
-}
-
-function addToCart(item) {
-    try {
-        // find cart items
-        let cart = [];
-        const cartData = localStorage.getItem('cart');
-        
-        if (cartData) {
-            cart = JSON.parse(cartData);
-            if (!Array.isArray(cart)) {
-                cart = [];
-                console.error("Cart data is not an array, resetting");
-            }
-        }
-        
-        // check if item is in cart
-        const existingItemIndex = cart.findIndex(cartItem => 
-            cartItem.id === item.id && 
-            cartItem.size === item.size && 
-            cartItem.milkOption === item.milkOption
-        );
-        
-        if (existingItemIndex !== -1) {
-            // increase quantity of same product
-            cart[existingItemIndex].quantity += 1;
-        } else {
-            // add new item
-            cart.push(item);
-        }
-    } catch (error) {
-        console.error("Error adding item to cart:", error);
-        alert("There was an error adding this item to your cart. Please try again.");
     }
 }
 
@@ -358,9 +287,9 @@ const footerHTML = `
         <div class="footer-section">
             <h3>Legal</h3>
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Refund Policy</a></li>
+                    <li><a href="../legal/privacy-policy/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../legal/terms-of-service/terms.html">Terms of Service</a></li>
+                    <li><a href="../legal/refund-policy/refund.html">Refund Policy</a></li>
             </ul>
         </div>
         <div class="footer-section">

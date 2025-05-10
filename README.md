@@ -19,40 +19,41 @@ Stay tuned for the best tea experience ever!
 ```bash
 chaygpt.github.io
 ├── index.html
-├── css
-│   └── style.css
-├── pages
-│   ├── about
-│   │   ├── about.css
-│   │   ├── about.html
-│   │   ├── about.js
-│   │   └── data.json
-│   ├── contact
-│   │   ├── contact.css
-│   │   └── contact.html
-│   ├── menu
-│   │   ├── menu.css
-│   │   └── menu.html
-│   ├── checkout
-│   │   ├── checkout.css
-│   │   └── checkout.html
-│   │── products
-│   │   ├── *.html
-│   │   └── product-style.css
-│   ├── join-us
-│   │   ├── login
-│   │   │   ├── login.css
-│   │   │   └── login.html
-│   │   ├── sign-up
-│   │   │   ├── sign-up.css
-│   │   │   └── signup.html
-│   │   ├── welcome.css
-│   │   └── welcome.html
-├── images
-│   ├── *.jpg
-│   └── products
-│       └── *.jpg
+├── css/
+│   └── style.css
+├── images/
+│   ├── *.jpg / *.png / *.mp4 (team photos, icons, product images)
+│   └── products/
+│       └── *.jpg (all products images)
+├── pages/
+│   ├── about/
+│   │   ├── about.html / about.css / about.js / data.json
+│   ├── checkout/
+│   │   ├── checkout.html / checkout.css / checkout.js
+│   ├── contact/
+│   │   ├── contact.html / contact.css
+│   ├── join-us/
+│   │   ├── login/
+│   │   │   ├── login.html / login.css / login.js
+│   │   │   ├── forgot-password.html / forgot-password.css / forgot-password.js
+│   │   ├── sign-up/
+│   │   │   ├── sign-up.html / sign-up.css / sign-up.js
+│   │   ├── welcome.html / welcome.css
+│   ├── legal/
+│   │   ├── privacy-policy/
+│   │   │   ├── privacy.html / privacy.css
+│   │   ├── refund-policy/
+│   │   │   ├── refund.html / refund.css
+│   │   └── terms-of-service/
+│   │       ├── terms.html / terms.css
+│   ├── menu/
+│   │   ├── menu.html / menu.css / menu.js
+│   │   ├── AI-Bot.css / AI-Bot.js
+│   └── products/
+│       ├── *.html (individual product pages)
+│       ├── product.js / product.json / product-style.css
 └── README.md
+
 ```
 ---
 ## 🏷️ Products
