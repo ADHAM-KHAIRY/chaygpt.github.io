@@ -34,7 +34,6 @@ const footerHTML = `
     <p class="copyright">© 2025 ChayGPT Coffee. All Rights Reserved.</p>
 `;
 
-// add footer after page load
 document.addEventListener('DOMContentLoaded', () => {
     const footerElement = document.getElementById("footer");
     if (footerElement) {
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Footer element not found");
     }
 
-    // load page
     addProductStyles();
     getProductData();
 });
