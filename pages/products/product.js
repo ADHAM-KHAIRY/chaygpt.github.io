@@ -19,7 +19,7 @@ const headerHTML =
     </nav>
 </header>`;
 
-// load heaader
+// load heaader.
 document.addEventListener('DOMContentLoaded', () => {
     const headerElement = document.getElementById("header");
     headerElement.innerHTML = headerHTML;
