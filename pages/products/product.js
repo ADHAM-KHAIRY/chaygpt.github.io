@@ -143,8 +143,8 @@ function displayProduct(currentProduct, allProducts, container) {
                 <h2 class="section-title">Ingredients</h2>
                 <ul class="ingredients-list">
                     ${currentProduct.ingredients && currentProduct.ingredients.length > 0 ? 
-                      currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('') :
-                      '<li>No ingredients listed</li>'}
+                    currentProduct.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('') :
+                    '<li>No ingredients listed</li>'}
                 </ul>
             </div>
             <div class="nutritional-info">
