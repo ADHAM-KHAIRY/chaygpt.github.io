@@ -296,15 +296,6 @@ function addProductStyles() {
             text-decoration: none;
             border-radius: 4px;
         }
-        @media (max-width: 768px) {
-            .main-product {
-                flex-direction: column;
-            }
-            
-            .main-product img {
-                max-width: 100%;
-            }
-        }
     `;
     document.head.appendChild(styleElement);
 }
