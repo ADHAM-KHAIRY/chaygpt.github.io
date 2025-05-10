@@ -1,131 +1,133 @@
 <!DOCTYPE html>
 <html>
-    <head>
-            <meta charset="UTF-8">
-            <title>Cart</title>
-            <script src="https://kit.fontawesome.com/aa9b979f00.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="../../pages/menu/menu.css">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="checkout.css">
-            <link rel="icon" href="../../images/chay-gpt-logo.jpg" type="image/png">
-            
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="main-logo">
-                    <a href="../../index.html"><img src="../../images/chay-gpt-logo.jpg" alt="ChayGPT Logo" id="Logo"></a>
-                </div>
-                <a href="../../index.html"><h1 class="brand-name" >ChayGPT</h1></a>
-                <ul class="nav-links">
-                    <li class="links"><a href="../../index.html">Home</a></li>
-                    <li class="links"><a href="../about/about.html">About</a></li>
-                    <li class="links"><a href="../contact/contact.html">Contact</a></li>
-                    <li class="links active"><a href="../menu/menu.html">Keep shopping</a></li>
-                </ul>
-                <ul class="nav-links">
-                    <li class="links"><a href="../join-us/welcome.html">Login/signup</a></li>
-                </ul>
-                <div class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </div>
-            </nav>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cart</title>
+    <script
+      src="https://kit.fontawesome.com/aa9b979f00.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../pages/menu/menu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="icon" href="../../images/chay-gpt-logo.jpg" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="main-logo">
+          <a href="../../index.html"
+            ><img
+              src="../../images/chay-gpt-logo.jpg"
+              alt="ChayGPT Logo"
+              id="Logo"
+          /></a>
+        </div>
+        <a href="../../index.html"><h1 class="brand-name">ChayGPT</h1></a>
+        <ul class="nav-links">
+          <li class="links"><a href="../../index.html">Home</a></li>
+          <li class="links"><a href="../about/about.html">About</a></li>
+          <li class="links"><a href="../contact/contact.html">Contact</a></li>
+          <li class="links active">
+            <a href="../menu/menu.html">Keep shopping</a>
+          </li>
+        </ul>
+        <ul class="nav-links">
+          <li class="links">
+            <a href="../join-us/welcome.html">Login/signup</a>
+          </li>
+        </ul>
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </nav>
+    </header>
     <div class="container">
-        <div class="checkoutlayout">
-            <!-- Cart Section -->
-            <div class="r-cart">
-                <h1>Products In Cart</h1>
-                <div class="list" id="cartItems">
-                    <!-- Cart items will be dynamically inserted here -->
-                </div>
-                <div class="cart-summary">
-                        <div class="row">
-                        <div>Subtotal</div>
-                        <div class="subtotal">0 EGP</div>
-                    </div>
-                    <div class="row">
-                        <div>Delivery Fee</div>
-                        <div class="delivery-fee">20EGP</div>
-                    </div>
-                    <div class="row">
-                        <div>Total</div>
-                        <div class="total-price">20 EGP</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="checkoutlayout">
+        <div class="r-cart">
+          <h1>Products In Cart</h1>
+          <div class="list" id="cart-items-container">
+            <!-- Cart items will be inserted here by JavaScript -->
+            <div class="empty-cart-message">Your cart is empty</div>
+          </div>
+        </div>
+
         <div class="right-section">
-            <h1>CheckOut</h1>
-            <div class="form">
-                <div class="group">
-                    <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" required>
-                        <span class="error-message"></span>
-                </div>
-                
-                <div class="group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="group">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" required>
-                    <span class="error-message"></span>
-                </div>
-                <div class="group">
-                    <label for="">City/Government</label>
-                    <select name="" id="">
-                        <option value="">Choose..</option>
-                        <option value="Alexandria">Alexandria</option>
-                        <option value="Cairo">Cairo</option>
-                        <option value="Giza">Giza</option>
-                        <option value="Matruh">Matruh</option>
-                        <option value="Menofia">Menofia</option>
-                        <span class="error-message"></span>
-                    </select>
-                </div>
-                <div class="group">
-                    <label for="">Area</label>
-                    <select name="" id="">
-                        <option value="">Choose..</option>
-                        <option value="Helwan">Helwan</option>
-                        <option value="Nasr City">Nasr City</option>
-                        <option value="El Maadi">El Maadi</option>
-                        <option value="Almaza">Almaza</option>
-                        <option value="Ramsees">Ramsees</option>
-                        <option value="Makram Ebed">Makram Ebed</option>
-                        <option value="El Haram">El Haram </option>
-                        <option value="Shubra">Shubra</option>
-                        <span class="error-message"></span>
-                    </select>
-                    <div class="group">
-                        <label class="optionalNote" for="notes">Delivery Notes (Optional)</label>
-                        <textarea id="notes" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-                
-            <div class="validation-message" id="validationMessage">
+          <h1>CheckOut</h1>
+          <div class="form">
+            <div class="group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" required />
+              <span class="error-message"></span>
             </div>
 
-            <button type="submit" class="buttoncheckout">CheckOut
-            </button>
-            
+            <div class="group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="group">
+              <label for="address">Address</label>
+              <input type="text" id="address" required />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="group">
+              <label for="city">City/Government</label>
+              <select name="city" id="city" required>
+                <option value="">Choose..</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Matruh">Matruh</option>
+                <option value="Menofia">Menofia</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+
+            <div class="group">
+              <label for="area">Area</label>
+              <select name="area" id="area" required>
+                <option value="">Choose..</option>
+                <option value="Helwan">Helwan</option>
+                <option value="Nasr City">Nasr City</option>
+                <option value="El Maadi">El Maadi</option>
+                <option value="Ramsees">Ramsees</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+          </div>
+
+          <div class="return">
+            <div class="row">
+              <div>Total Quantity</div>
+              <div class="totalQuantity">0</div>
+            </div>
+            <div class="row">
+              <div>Total Price</div>
+              <div class="totalPrice">0 EGP</div>
+            </div>
+          </div>
+
+          <button class="buttoncheckout" id="checkout-button">CHECKOUT</button>
         </div>
+      </div>
     </div>
-    
-</div>
-<footer id="footer">
-    
-</footer>
-    
-<script src="checkout.js"></script>
-</body>
+    <footer id="footer"></footer>
+    <script src="../../scripts/chaygpt-chatbot.js"></script>
+    <script src="checkout.js"></script>
+  </body>
 </html>
