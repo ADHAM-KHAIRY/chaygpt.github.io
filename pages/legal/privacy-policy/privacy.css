@@ -1,155 +1,157 @@
-    p{
-        margin-left: 80px;
-        margin-top: 8px;
-    }
+p{
+    margin-left: 80px;
+    margin-top: 8px;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: #d8e0cc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}       
     
-    body {
-        font-family: 'Cairo', sans-serif;
-        line-height: 1.6;
-        color: var(--text);
-        background-color: #d8e0cc;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }                                                                      
-    
-    .header {
-        background-color: var(--primary);
-        color: var(--white);
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-radius: 0 0 50px 50px;
-    }
-    
-    .nav container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-        margin-left: 0px;
-    }
-    
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-left: 0px;
-    }
-    
-    .logo {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--secondary);
-        transition: var(--transition);
-        margin-left: 0px;
-    }
-    
-    .logo:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow);
-        margin-left: 0px;
-    }
-    
-    .nav-list {
-        display: flex;
-        gap: 2rem;
-        margin-left: 0px;
-    }
-    
-    .nav-item {
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 500;
-        position: relative;
-        margin-left: 0px;
-    }
-    
-    .nav-item a {
-        padding: 0.5rem;
-        color: var(--white);
-        margin-left: 0px;
-    }
-    
-    .nav-item a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--secondary);
-        transition: var(--transition);
-    }
-    
-    .nav-item a:hover::after {
+.header {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 50px 50px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-item a {
+    padding: 0.5rem;
+    color: var(--white);
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: var(--transition);
+}
+
+.nav-item a:hover::after {
     width: 100%;
-    margin-left: 0px;
-    }
-    .titles-h1{
-        margin-left: 20px;
-    }
-    .website-link{
-        color: #4a563a;
-        text-decoration: underline;
-    }
-    li{
-        margin-left: 80px;
-    }
-    .titles-h2{
-        margin-left: 50px;
-    }
-    footer {
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
-        padding: 3rem 5%;
-    }
-    
-    .footer-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .footer-section h3 {
-        font-family: 'Oswald', sans-serif;
-        margin-bottom: 1.5rem;
-        font-size: 1.2rem;
-        position: relative;
-        display: inline-block;
-    }
-    
-    .footer-section h3:after {
-        content: '';
-        position: absolute;
-        width: 50%;
-        height: 2px;
-        background-color: var(--secondary-color);
-        bottom: -5px;
-        left: 0;
-    }
-    
-    .footer-section ul li {
-        margin-bottom: 0.5rem;
-        transition: transform 0.3s ease;
-    }
-    
-    .footer-section ul li:hover {
-        transform: translateX(3px);
-    }
-    
-    .footer-section a {
-        opacity: 0.8;
-        transition: all 0.3s ease;
-    }
-    
-    .footer-section a:hover {
-        opacity: 1;
-    }
-    
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titles-h1{
+    margin-left: 20px;
+}
+.website-link{
+    color: #4a563a;
+    text-decoration: underline;
+}
+li{
+    margin-left: 80px;
+}
+.titles-h2{
+    margin-left: 50px;
+}
+
+
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 3rem 5%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    transform: translateX(3px);
+}
+
+.footer-section a {
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+}

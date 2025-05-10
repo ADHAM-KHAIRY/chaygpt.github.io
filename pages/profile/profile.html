@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>ChayGPT – Profile</title>
+        <link rel="stylesheet" href="profile.css" />
+        <link rel="stylesheet" href="../../pages/menu/menu.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Oswald:wght@200..700&family=Rakkas&display=swap" rel="stylesheet">
+        </head>
+        <body>
+
+        <header>
+            <nav>
+            <div class="main-logo">
+                <a href="index.html"><img src="../../images/chay-gpt-logo.jpg" alt="ChayGPT Logo"></a>
+            </div>
+            <a href="index.html"><h1 class="brand-name">ChayGPT</h1></a>
+            <ul class="nav-links">
+                <li class="links"><a href="index.html">Home</a></li>
+                <li class="links"><a href="./pages/about/about.html">About</a></li>
+                <li class="links"><a href="./pages/contact/contact.html">Contact</a></li>
+                <li class="links"><a href="./pages/menu/menu.html">Menu</a></li>
+            </ul>
+            <ul class="nav-links">
+                <li class="links active"><a href="./pages/join-us/welcome.html">Profile</a></li>
+            </ul>
+            </nav>
+        </header>
+
+        <div class="profile-container">
+            <img src="/images/avatar.jpg" alt="Profile Picture" class="avatar" />
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Your username" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your email address" />
+
+            <button class="update-btn">Update</button>
+
+            <div class="order-history">
+            <h3>Order History</h3>
+            <ul>
+                <li>Iced Coffee – Yesterday</li>
+                <li>Iced Tea Fusion – May 5</li>
+                <li>Caramel Chayccino – May 2</li>
+            </ul>
+            </div>
+        </div>
+        <footer id="footer"></footer>
+        <script src="profile.js"></script>
+        <script src="../../scripts/chaygpt-chatbot.js"></script>
+        </body>
+        </html>
