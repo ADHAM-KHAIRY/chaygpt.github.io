@@ -166,7 +166,38 @@ function displayProduct(currentProduct, allProducts, container) {
     
     initializeProductInteractions(currentProduct);
 }
-
+function addToCart(item) {
+    try {
+        let cart = [];
+        const cartData = localStorage.getItem('cart');
+        
+        if (cartData) {
+            cart = JSON.parse(cartData);
+            if (!Array.isArray(cart)) {
+                cart = [];
+                console.error("Cart data is not an array, resetting");
+            }
+        }
+        
+        const existingItemIndex = cart.findIndex(cartItem => 
+            cartItem.id === item.id && 
+            cartItem.size === item.size && 
+            cartItem.milkOption === item.milkOption
+        );
+        
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push(item);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+    } catch (error) {
+        console.error("Error adding item to cart:", error);
+        alert("There was an error adding this item to your cart. Please try again.");
+    }
+}
 function initializeProductInteractions(currentProduct) {
     
     const sizeOptions = document.querySelectorAll('.size-option');
@@ -212,7 +243,17 @@ function initializeProductInteractions(currentProduct) {
             if (milkSelector) {
                 milkOption = milkSelector.value;
             }
+            const cartItem = {
+                id: currentProduct.id,
+                name: currentProduct.name,
+                price: currentProduct.price,
+                size: selectedSize,
+                milkOption: milkOption,
+                quantity: 1,
+                image: currentProduct.image
+            };
             
+            addToCart(cartItem);
             alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
         });
     }
