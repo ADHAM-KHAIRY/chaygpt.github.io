@@ -214,16 +214,13 @@ main {
 }
 
 /*Image Styling*/
-.floating-image {
-    width: 40%;
-    border-radius: 20%;
+.floating-video {
+    width: 50%;
+    border-radius: 5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.floating-image:hover {
-    transform: scale(1.03);
-}
 /*products Styling */
 
 .products-container {
@@ -328,6 +325,52 @@ main {
     line-height: 1.8;
     padding: 1.5rem;
 }
+
+/* Fun Facts Table Styling */
+.fun-facts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.fun-facts-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fun-facts-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    vertical-align: middle;
+    line-height: 1.6;
+}
+
+.fun-facts-table tbody tr:hover {
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease;
+}
+
+.fun-facts-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.num{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
 /* location */
 .map-location-container {
     display: flex;
