@@ -31,7 +31,7 @@ const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
 const baseName = fileName.split('.')[0];
 console.log("Base File Name:", baseName);
 
-//get el data
+// get el data
 async function getProductData() {
     try {
         const response = await fetch('product.json');
