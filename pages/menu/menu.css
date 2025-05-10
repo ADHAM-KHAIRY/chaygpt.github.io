@@ -17,8 +17,6 @@
     --text-color: #333;
     --light-bg: #f9f5f0;
     --white: #fff;
-
-    /* Added missing variables */
     --primary-dark: #4a563a;
     --primary: #50613b;
     --secondary: #d8e0cc;
@@ -26,16 +24,6 @@
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --text: #333;
-
-    /* Added missing variables */
-    --primary-dark: #4a563a;
-    --primary: #50613b;
-    --secondary: #d8e0cc;
-    --border-radius: 10px;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --text: #333;
-}
 
 body {
     font-family: 'Cairo', sans-serif;
@@ -354,4 +342,3 @@ footer {
     border-top: 1px solid rgba(230, 201, 168, 0.3);
     font-size: 0.9rem;
 }
-
