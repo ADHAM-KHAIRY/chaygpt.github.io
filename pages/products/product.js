@@ -5,7 +5,7 @@ const headerHTML = `<header>
         <div class="main-logo">
             <a href="../../index.html"><img src="../../images/chay-gpt-logo.jpg" alt="ChayGPT Logo"></a>
         </div>
-        <h1 class="brand-name">ChayGPT</h1>
+        <a href="../../index.html"><h1 class="brand-name">ChayGPT</h1></a>
         <ul class="nav-links">
             <li class="links"><a href="../../index.html">Home</a></li>
             <li class="links"><a href="../../pages/about/about.html">About</a></li>
