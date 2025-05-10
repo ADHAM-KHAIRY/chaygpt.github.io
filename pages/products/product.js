@@ -244,27 +244,10 @@ function initializeProductInteractions(currentProduct) {
                 quantity: 1,
                 image: currentProduct.image
             };
-            
-            // add item to cart
-            addToCart(cartItem);
-            
-            // confirm with alert
-            alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
-        });
-    }
-    
-    // show product options
-    const productOptions = document.querySelector(".product-options");
-    const optionsArea = document.querySelector(".options-area");
-    
-    if (productOptions && optionsArea) {
-        productOptions.addEventListener('click', function() {
-            optionsArea.classList.toggle("show");
-        });
-    }
-}
-
-function addToCart(item) {
+            function addToCart (cartItem) {
+                localStorage.setItem(cartItem)
+            }
+            function addToCart(item) {
     try {
         // find cart items
         let cart = [];
@@ -292,9 +275,32 @@ function addToCart(item) {
             // add new item
             cart.push(item);
         }
+        
+        // MISSING LINE: Save updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
     } catch (error) {
         console.error("Error adding item to cart:", error);
         alert("There was an error adding this item to your cart. Please try again.");
+    }
+}
+            
+            // add item to cart
+            addToCart(cartItem);
+            
+            // confirm with alert
+            alert(`Added ${currentProduct.name} (Size: ${selectedSize}${milkOption !== "Regular" ? ', Milk: ' + milkOption : ''}) to your cart!`);
+        });
+    }
+    
+    // show product options
+    const productOptions = document.querySelector(".product-options");
+    const optionsArea = document.querySelector(".options-area");
+    
+    if (productOptions && optionsArea) {
+        productOptions.addEventListener('click', function() {
+            optionsArea.classList.toggle("show");
+        });
     }
 }
 
