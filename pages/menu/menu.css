@@ -201,8 +201,7 @@ nav {
     margin-top: 0.5rem;
 }
 
-/* Category boxes */
-/* Category boxes */
+
 .category-box {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -224,7 +223,7 @@ nav {
     gap: 1.5rem;
 }
 
-/* Product cards *//* Product cards */
+
 .product-card {
     display: block;
     text-decoration: none;
