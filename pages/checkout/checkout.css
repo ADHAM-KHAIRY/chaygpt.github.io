@@ -124,6 +124,38 @@ font-weight: bold;
 font-size: large;
 }
 
+.group label {
+  font-weight: 500;
+}
+
+.group input,
+.group select,
+.group textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-family: 'Cairo', sans-serif;
+  transition: var(--transition);
+}
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(88, 124, 59, 0.3);
+}
+.group textarea {
+  resize: vertical;
+  
+}
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+}
+
+
 .buttoncheckout{
 width: 100%;
 height: 40px;
@@ -154,6 +186,7 @@ background-color: #4a563a;
 color:#d8e0cc ;
 box-shadow: 0 4px 12px rgba(0, 0, 0, 2);
 }
+
 .r-cart .back-to-the-menu{
 text-decoration: none;
 position: relative;
@@ -241,8 +274,6 @@ transform: scale(1.1);
 }
 
 .copyright {
-text-align: center;
-padding-top: 1rem;
 border-top: 1px solid rgba(255, 255, 255, 0.1);
 
 }
